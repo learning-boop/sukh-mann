@@ -54,7 +54,7 @@ export default function Contact() {
                 <br />
                 Surrey, BC V3R 1J7
               </p>
-              <p className="text-gray-500 mt-2">Free parking on site.</p>
+              <p className="text-gray-500 mt-2">Phone &amp; Fax: (604) 581-0232</p>
               <a
                 href={MAPS_URL}
                 target="_blank"

@@ -17,7 +17,7 @@ const pillars = [
   },
   {
     title: "Easy to visit.",
-    text: "Free parking on site. Open late on weekdays. Open Saturdays. Same-day visits are often possible.",
+    text: "Open late on weekdays. Open Saturdays. Same-day visits are often possible. No doctor's referral needed.",
   },
 ];
 

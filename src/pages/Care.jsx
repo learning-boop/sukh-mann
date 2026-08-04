@@ -7,7 +7,7 @@ export default function Care() {
     <main>
       <Seo
         title="Chiropractic Care & Services | Dr. Sukh Mann, Surrey BC"
-        description="Chiropractic adjustments, Active Release Techniques®, registered massage, active rehab, physiotherapy, custom orthotics, and laser therapy in Surrey BC."
+        description="Chiropractic care, Active Release Techniques®, registered massage, active rehab, physiotherapy, custom orthotics, Class IV laser therapy and movement assessments in Surrey BC."
       />
       <PageHero
         eyebrow="Our care"
@@ -53,6 +53,15 @@ export default function Care() {
               <h2 className="font-display font-semibold text-[clamp(1.8rem,3.5vw,2.6rem)] mt-2 leading-snug">
                 {s.title}
               </h2>
+              <div className="group mt-6 rounded-3xl overflow-hidden aspect-[4/3] bg-gray-100 shadow-[0_12px_40px_rgba(0,0,0,0.10)]">
+                <img
+                  src={s.img}
+                  alt={s.title}
+                  loading="lazy"
+                  onError={(e) => (e.currentTarget.style.display = "none")}
+                  className="w-full h-full object-cover group-hover:scale-[1.05] transition-transform duration-700 ease-out"
+                />
+              </div>
             </Reveal>
             <div className="md:col-span-7">
               <Reveal delay={100}>

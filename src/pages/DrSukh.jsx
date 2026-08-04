@@ -50,6 +50,13 @@ export default function DrSukh() {
                 caring manner.
               </p>
             </Reveal>
+            <Reveal delay={340}>
+              <p className="mt-4 text-gray-400 leading-relaxed">
+                He belongs to ten professional bodies, including the Canadian Chiropractic
+                Association, the College of Massage Therapists of BC, the Royal College of
+                Chiropractic Sports Sciences (Canada), and SportMed BC.
+              </p>
+            </Reveal>
           </div>
         </div>
       </section>

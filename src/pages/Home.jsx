@@ -395,25 +395,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============ ICBC BANNER ============ */}
-      <section className="px-6 pb-20 md:pb-32">
-        <Reveal>
-          <div className="max-w-6xl mx-auto rounded-3xl bg-[#0071E3] text-white p-10 md:p-16 text-center shadow-[0_20px_60px_rgba(0,113,227,0.35)]">
-            <h2 className="font-display font-semibold text-[clamp(1.9rem,4.5vw,3.2rem)] leading-tight">
-              In a car accident?
-            </h2>
-            <p className="mt-4 text-lg md:text-xl text-blue-100 max-w-xl mx-auto leading-relaxed">
-              If ICBC covers you, your visits are free. We do the paperwork for you.
-            </p>
-            <a
-              href={TEL}
-              className="inline-block mt-8 bg-white text-[#0071E3] font-medium px-9 py-3.5 rounded-full hover:bg-blue-50 transition-colors"
-            >
-              Call {PHONE}
-            </a>
-          </div>
-        </Reveal>
-      </section>
+    
 
     </main>
   );
