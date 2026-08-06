@@ -2,20 +2,20 @@ export const PHONE = "(604) 581-0232";
 export const TEL = "tel:6045810232";
 export const MAPS_URL = "https://maps.google.com/?cid=11867297383599268434";
 
-// Placeholder photos from Unsplash — swap `img` URLs for real clinic photos any time.
+// Bento grid cards (client-approved AI images in /public/images/conditions)
 export const painCards = [
   { icon: "🦴", title: "Back Pain", line: "We find the cause. Then we treat it.",
-    img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=70&auto=format&fit=crop" },
+    img: "/images/back.jpg" },
   { icon: "💆", title: "Neck Pain", line: "Gentle care to help you move again.",
-    img: "https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=800&q=70&auto=format&fit=crop" },
+    img: "/images/neck.jpg" },
   { icon: "🤕", title: "Headaches", line: "Many people feel relief after a few visits.",
-    img: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=70&auto=format&fit=crop" },
+    img: "/images/headache.jpg" },
   { icon: "🚗", title: "Car Accident", line: "ICBC pays. You pay nothing.",
-    img: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=70&auto=format&fit=crop" },
+    img: "/images/car.jpg" },
   { icon: "🏃", title: "Sports Injury", line: "The same care pro athletes get.",
-    img: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&q=70&auto=format&fit=crop" },
+    img: "/images/sports.jpg" },
   { icon: "🦶", title: "Foot Pain", line: "Help for heel pain and sore feet.",
-    img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=70&auto=format&fit=crop" },
+    img: "/images/foot.jpg" },
 ];
 
 export const steps = [

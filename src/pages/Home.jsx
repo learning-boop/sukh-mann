@@ -166,8 +166,9 @@ export default function Home() {
           className="hidden md:block absolute inset-0 w-full h-full object-contain object-right"
         />
         {/* Desktop legibility overlays */}
-        <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-[#0B0B0F] via-[#0B0B0F]/60 to-transparent" />
-        <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-[#0B0B0F]/80 via-transparent to-[#0B0B0F]/40" />
+        <div className="hidden md:block absolute inset-0 bg-black/35" />
+        <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-[#0B0B0F]/85 via-[#0B0B0F]/35 to-transparent" />
+        <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-[#0B0B0F]/55 via-transparent to-[#0B0B0F]/30" />
         <div className="relative z-10 max-w-6xl mx-auto px-6 w-full pt-28 md:pt-24 md:pb-32">
           <div className="max-w-xl mx-auto md:mx-0 text-center md:text-left">
             <Reveal delay={100}>
@@ -200,6 +201,7 @@ export default function Home() {
             alt="Ice hockey player skating hard under arena lights"
             className="w-full h-auto"
           />
+          <div className="absolute inset-0 bg-black/25" />
           <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#0B0B0F] to-transparent" />
           <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0B0B0F] to-transparent" />
           <p className="absolute bottom-4 inset-x-0 text-center text-gray-400 text-sm">
@@ -395,7 +397,7 @@ export default function Home() {
         </div>
       </section>
 
-    
+      
 
     </main>
   );

@@ -107,7 +107,8 @@ export default function NewPatients() {
               <div className="relative rounded-3xl overflow-hidden aspect-[4/5] bg-gradient-to-br from-gray-100 to-gray-200 shadow-[0_24px_60px_rgba(0,0,0,0.12)]">
                 <div className="absolute inset-0 flex items-center justify-center text-5xl">🤝</div>
                 <img
-                  src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=900&q=70&auto=format&fit=crop"
+                  src="/images/new-patient.png"
+
                   alt="A friendly doctor ready to welcome you"
                   loading="lazy"
                   onError={(e) => (e.currentTarget.style.display = "none")}

@@ -48,6 +48,44 @@ export default function About() {
         </div>
       </section>
 
+      {/* Inside the clinic */}
+      <section className="py-4 md:py-8">
+        <div className="max-w-6xl mx-auto px-6">
+          <Reveal>
+            <h2 className="font-display font-semibold text-[clamp(1.8rem,4vw,2.8rem)] text-center">
+              Take a look inside.
+            </h2>
+            <p className="text-center text-gray-500 text-lg mt-3 max-w-md mx-auto">
+              A clean, calm space made for your comfort.
+            </p>
+          </Reveal>
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-5">
+            {[
+              { src: "/images/clinic/waiting-room.jpg", label: "The waiting room" },
+              { src: "/images/clinic/treatment-room.jpg", label: "A treatment room" },
+              { src: "/images/clinic/rehab-space.jpg", label: "The rehab space" },
+            ].map((g, i) => (
+              <Reveal key={g.label} delay={i * 90}>
+                <figure className="group">
+                  <div className="rounded-3xl overflow-hidden aspect-square bg-gray-100 shadow-[0_12px_40px_rgba(0,0,0,0.10)]">
+                    <img
+                      src={g.src}
+                      alt={g.label}
+                      loading="lazy"
+                      onError={(e) => (e.currentTarget.style.display = "none")}
+                      className="w-full h-full object-cover group-hover:scale-[1.05] transition-transform duration-700 ease-out"
+                    />
+                  </div>
+                  <figcaption className="text-center text-gray-500 text-sm mt-3">
+                    {g.label}
+                  </figcaption>
+                </figure>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* How care works here */}
       <section className="py-20 md:py-28 bg-[#0B0B0F] text-white">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center">
