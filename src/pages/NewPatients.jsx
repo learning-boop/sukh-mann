@@ -66,7 +66,7 @@ export default function NewPatients() {
   return (
     <main>
       <Seo
-        title="New Patients | Dr. Sukh Mann, Chiropractor Surrey BC"
+        title="New Patients | ICBC Chiropractor Surrey BC | Dr. Sukh Mann"
         description="Your first visit takes 30-45 minutes. No referral needed. ICBC, WorkSafe BC, MSP, RCMP, DVA and extended health plans accepted in Surrey BC."
       />
       <PageHero
@@ -107,8 +107,7 @@ export default function NewPatients() {
               <div className="relative rounded-3xl overflow-hidden aspect-[4/5] bg-gradient-to-br from-gray-100 to-gray-200 shadow-[0_24px_60px_rgba(0,0,0,0.12)]">
                 <div className="absolute inset-0 flex items-center justify-center text-5xl">🤝</div>
                 <img
-                  src="/images/new-patient.png"
-
+                  src="images/new-patient.png"
                   alt="A friendly doctor ready to welcome you"
                   loading="lazy"
                   onError={(e) => (e.currentTarget.style.display = "none")}

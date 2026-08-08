@@ -6,7 +6,7 @@ export default function DrSukh() {
   return (
     <main>
       <Seo
-        title="Meet Dr. Sukh Mann BSc, RMT, DC | Chiropractor Surrey BC"
+        title="Dr. Sukh Mann BSc, RMT, DC | Sports Injury Chiropractor Surrey"
         description="Dr. Sukh Mann is a chiropractor and registered massage therapist who has worked with the BC Lions, Rowing Canada, and at the Olympic Games."
       />
       <PageHero

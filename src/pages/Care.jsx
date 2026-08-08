@@ -6,8 +6,8 @@ export default function Care() {
   return (
     <main>
       <Seo
-        title="Chiropractic Care & Services | Dr. Sukh Mann, Surrey BC"
-        description="Chiropractic care, Active Release Techniques®, registered massage, active rehab, physiotherapy, custom orthotics, Class IV laser therapy and movement assessments in Surrey BC."
+        title="Chiropractic Care Surrey | Back Pain, Sciatica & Sports Injury Treatment"
+        description="Back pain treatment, sciatica care, whiplash and sports injury chiropractic in Surrey BC. Active Release Techniques®, massage, orthotics, Class IV laser and more."
       />
       <PageHero
         eyebrow="Our care"

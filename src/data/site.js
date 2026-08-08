@@ -5,17 +5,17 @@ export const MAPS_URL = "https://maps.google.com/?cid=11867297383599268434";
 // Bento grid cards (client-approved AI images in /public/images/conditions)
 export const painCards = [
   { icon: "🦴", title: "Back Pain", line: "We find the cause. Then we treat it.",
-    img: "/images/back.jpg" },
+    img: "/images/conditions/back.jpg" },
   { icon: "💆", title: "Neck Pain", line: "Gentle care to help you move again.",
-    img: "/images/neck.jpg" },
-  { icon: "🤕", title: "Headaches", line: "Many people feel relief after a few visits.",
-    img: "/images/headache.jpg" },
+    img: "/images/conditions/neck.jpg" },
+  { icon: "🤕", title: "Headaches", line: "From tension headaches to migraines. Many people feel relief after a few visits.",
+    img: "/images/conditions/headache.jpg" },
   { icon: "🚗", title: "Car Accident", line: "ICBC pays. You pay nothing.",
-    img: "/images/car.jpg" },
+    img: "/images/conditions/car.jpg" },
   { icon: "🏃", title: "Sports Injury", line: "The same care pro athletes get.",
-    img: "/images/sports.jpg" },
+    img: "/images/conditions/sports.jpg" },
   { icon: "🦶", title: "Foot Pain", line: "Help for heel pain and sore feet.",
-    img: "/images/foot.jpg" },
+    img: "/images/conditions/foot.jpg" },
 ];
 
 export const steps = [

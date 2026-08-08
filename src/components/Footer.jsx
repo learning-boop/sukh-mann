@@ -73,7 +73,10 @@ export default function Footer() {
               BSc, RMT, DC. Chiropractic care, massage therapy, and rehab. All in one place, in
               Surrey.
             </p>
-            <p className="text-gray-600 mt-6 text-xs">
+            <p className="text-gray-500 mt-4 text-sm">
+              Proudly serving Surrey and nearby communities.
+            </p>
+            <p className="text-gray-600 mt-4 text-xs">
               © {new Date().getFullYear()} Dr. Sukh Mann. All rights reserved.
             </p>
           </div>
