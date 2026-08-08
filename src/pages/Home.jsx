@@ -173,15 +173,12 @@ export default function Home() {
           <div className="max-w-xl mx-auto md:mx-0 text-center md:text-left">
             <Reveal delay={100}>
               <h1 className="font-display font-semibold tracking-tight leading-[1.04] text-[clamp(3.2rem,8vw,5.8rem)]">
-                Built for
-                <br />
-                Recovery.
-              </h1>
+               Restore Movement               <br />
+                Rebuild Confidence             </h1>
             </Reveal>
             <Reveal delay={220}>
               <p className="mt-6 md:mt-8 text-lg text-gray-300 leading-relaxed max-w-sm mx-auto md:mx-0">
-                Trusted chiropractic care in Surrey. The same care pro athletes get &mdash; for you.
-              </p>
+Trusted chiropractic care in Surrey—bringing the same high standard of care provided to professional athletes to you.              </p>
             </Reveal>
             <Reveal delay={340}>
               <a
@@ -246,11 +243,11 @@ export default function Home() {
                   What we treat
                 </p>
                 <h2 className="font-display font-semibold text-[clamp(2.2rem,5vw,3.8rem)] mt-3 leading-tight">
-                  What hurts today?
+                 Where does it hurt?
                 </h2>
               </div>
               <p className="text-gray-500 text-lg max-w-sm md:text-right">
-                Pick your pain. We treat all of these every day.
+                Find your condition. We’re here to help
               </p>
             </div>
           </Reveal>
