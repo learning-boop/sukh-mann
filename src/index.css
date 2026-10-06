@@ -46,3 +46,141 @@ html {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* ---------- Portrait card effects ---------- */
+@property --ring-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.portrait-stage {
+  perspective: 1200px;
+}
+.portrait-tilt {
+  --rx: 0deg;
+  --ry: 0deg;
+  --mx: 50%;
+  --my: 30%;
+  transform: rotateX(var(--rx)) rotateY(var(--ry));
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.portrait-ring {
+  background: conic-gradient(
+    from var(--ring-angle),
+    rgba(110, 180, 255, 0.05),
+    #6eb4ff,
+    #0071e3,
+    rgba(110, 180, 255, 0.05) 40%,
+    rgba(110, 180, 255, 0.05) 60%,
+    #6eb4ff,
+    rgba(110, 180, 255, 0.05)
+  );
+  animation: ring-spin 6s linear infinite;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55), 0 0 60px rgba(0, 113, 227, 0.25);
+}
+@keyframes ring-spin {
+  to {
+    --ring-angle: 360deg;
+  }
+}
+.portrait-zoom {
+  animation: ken-burns 18s ease-in-out infinite alternate;
+  transform-origin: 40% 35%;
+}
+@keyframes ken-burns {
+  from {
+    transform: scale(1.02);
+  }
+  to {
+    transform: scale(1.12);
+  }
+}
+.portrait-spot {
+  background: radial-gradient(
+    circle at var(--mx) var(--my),
+    rgba(255, 255, 255, 0.18),
+    transparent 45%
+  );
+  mix-blend-mode: soft-light;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.portrait-tilt:hover .portrait-spot {
+  opacity: 1;
+}
+.portrait-badge {
+  transform: translateZ(60px);
+  animation: badge-float 5s ease-in-out infinite;
+}
+@keyframes badge-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -10px;
+  }
+}
+.portrait-pulse {
+  animation: glow-pulse 6s ease-in-out infinite;
+}
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+/* ---------- Photo hero ---------- */
+.hero-photo {
+  animation: hero-in 1.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+    transform: scale(1.12);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1.04);
+  }
+}
+.text-shimmer {
+  background: linear-gradient(110deg, #fff 35%, #6eb4ff 50%, #fff 65%);
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s ease-in-out infinite;
+}
+@keyframes shimmer {
+  0%,
+  100% {
+    background-position: 100% 0;
+  }
+  50% {
+    background-position: 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portrait-ring,
+  .portrait-zoom,
+  .portrait-badge,
+  .portrait-pulse,
+  .hero-photo,
+  .text-shimmer {
+    animation: none !important;
+  }
+  .hero-photo {
+    opacity: 1;
+  }
+}

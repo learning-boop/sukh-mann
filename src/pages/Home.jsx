@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal.jsx";
+import PortraitCard from "../components/PortraitCard.jsx";
 import { PHONE, TEL, painCards, steps, featuredServices, testimonials } from "../data/site.js";
 import heroImg from "../assets/hero-athlete.jpg";
 
@@ -321,23 +322,17 @@ Trusted chiropractic care in Surrey—bringing the same high standard of care pr
       <ServicesAccordion />
 
       {/* ============ MEET DR SUKH ============ */}
-      <section className="py-20 md:py-32 bg-[#0B0B0F] text-white">
+      <section className="py-20 md:py-32 bg-[#0B0B0F] text-white overflow-hidden">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center">
           <Reveal>
-            {/* Drop the real photo at:  public/images/dr-sukh.jpg
-                Until the file exists, the placeholder below shows automatically. */}
-            <div className="relative rounded-full overflow-hidden aspect-square w-full max-w-md mx-auto bg-gradient-to-br from-[#12131a] to-[#1b2233] border border-white/10 shadow-[0_0_80px_rgba(0,113,227,0.15)]">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-gray-600 text-sm">[ Photo of Dr. Sukh Mann ]</span>
-              </div>
-              <img
-                src="/images/dr-sukh1.jpg"
-                alt="Dr. Sukh Mann, Chiropractor"
-                loading="lazy"
-                onError={(e) => (e.currentTarget.style.display = "none")}
-                className="relative w-full h-full object-cover"
-              />
-            </div>
+            <PortraitCard
+              src="/images/dr-sukh-portrait.jpg"
+              alt="Dr. Sukh Mann, Chiropractor, smiling in his Surrey clinic"
+              badges={[
+                { icon: "🏅", title: "Olympics & Paralympics", sub: "Team care at world events" },
+                { icon: "🏈", title: "BC Lions", sub: "Pro team chiropractor" },
+              ]}
+            />
           </Reveal>
           <div>
             <Reveal>
