@@ -1,4 +1,5 @@
 import Reveal from "../components/Reveal.jsx";
+import Icon from "../components/Icon.jsx";
 import { Seo, PageHero } from "../components/Page.jsx";
 import { PHONE, TEL } from "../data/site.js";
 
@@ -79,11 +80,11 @@ export default function NewPatients() {
       <section className="py-20 md:py-28">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-14 md:gap-20 items-start">
           <div>
-            <ol className="relative border-l-2 border-gray-200 ml-3 md:ml-0 space-y-14">
+            <ol className="relative border-l-2 border-[#0071E3]/20 ml-5 space-y-14">
               {visitSteps.map((s, i) => (
                 <Reveal key={s.title} delay={i * 100}>
                   <li className="relative pl-10">
-                    <span className="absolute -left-[21px] top-0 w-10 h-10 rounded-full bg-[#0071E3] text-white font-display font-semibold flex items-center justify-center">
+                    <span className="absolute -left-[21px] top-0 w-10 h-10 rounded-full bg-gradient-to-br from-[#2b8cff] to-[#0062cc] text-white font-display font-semibold flex items-center justify-center ring-8 ring-white shadow-[0_8px_20px_rgba(0,113,227,0.35)]">
                       {i + 1}
                     </span>
                     <h2 className="font-display font-semibold text-2xl">{s.title}</h2>
@@ -114,9 +115,14 @@ export default function NewPatients() {
                   className="relative w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-5 left-6 bg-white rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.15)] border border-black/5 px-6 py-4">
-                <p className="font-display font-semibold text-2xl text-[#0071E3]">30–45 min</p>
-                <p className="text-gray-500 text-sm">for your first visit</p>
+              <div className="absolute -bottom-6 left-6 flex items-center gap-4 bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_16px_40px_rgba(0,0,0,0.18)] border border-black/5 px-5 py-4">
+                <span className="icon-badge">
+                  <Icon name="clock" className="w-6 h-6" />
+                </span>
+                <span>
+                  <span className="block font-display font-semibold text-2xl text-gradient">30–45 min</span>
+                  <span className="block text-gray-500 text-sm">for your first visit</span>
+                </span>
               </div>
             </div>
           </Reveal>
@@ -127,7 +133,8 @@ export default function NewPatients() {
       <section className="py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-6">
           <Reveal>
-            <div className="rounded-3xl bg-gray-50 border border-black/5 p-8 md:p-10 h-full">
+            <div className="card-lift rounded-3xl bg-white border border-black/5 shadow-[0_10px_40px_rgba(15,23,42,0.06)] p-8 md:p-10 h-full">
+              <span className="icon-badge mb-6"><Icon name="activity" className="w-6 h-6" /></span>
               <h2 className="font-display font-semibold text-2xl">After your first visit</h2>
               <p className="text-gray-500 mt-3 text-lg leading-relaxed">
                 At each follow-up, Dr. Sukh asks how you have been and what has changed. He checks
@@ -136,7 +143,8 @@ export default function NewPatients() {
             </div>
           </Reveal>
           <Reveal delay={120}>
-            <div className="rounded-3xl bg-gray-50 border border-black/5 p-8 md:p-10 h-full">
+            <div className="card-lift rounded-3xl bg-white border border-black/5 shadow-[0_10px_40px_rgba(15,23,42,0.06)] p-8 md:p-10 h-full">
+              <span className="icon-badge mb-6"><Icon name="shield" className="w-6 h-6" /></span>
               <h2 className="font-display font-semibold text-2xl">You are in charge</h2>
               <p className="text-gray-500 mt-3 text-lg leading-relaxed">
                 Some think that once you start, you must go forever. Not true. Some people enjoy a
@@ -153,7 +161,7 @@ export default function NewPatients() {
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center">
           <Reveal>
             <h2 className="font-display font-semibold text-[clamp(2rem,4.5vw,3.4rem)] leading-tight">
-              What to bring.
+              What to <span className="text-gradient">bring.</span>
             </h2>
             <p className="mt-5 text-gray-500 text-lg leading-relaxed">
               Keep it simple. Wear something loose, and bring the numbers that fit your situation.
@@ -164,9 +172,11 @@ export default function NewPatients() {
               {bring.map((b) => (
                 <li
                   key={b}
-                  className="flex items-start gap-4 bg-white rounded-2xl border border-black/5 p-5 text-lg text-gray-700"
+                  className="card-lift flex items-start gap-4 bg-white rounded-2xl border border-black/5 shadow-[0_6px_20px_rgba(15,23,42,0.05)] p-5 text-lg text-gray-700"
                 >
-                  <span className="text-[#0071E3] font-bold mt-0.5">✓</span>
+                  <span className="grid place-items-center w-7 h-7 rounded-full bg-gradient-to-br from-[#2b8cff] to-[#0062cc] text-white shrink-0 mt-0.5">
+                    <Icon name="check" className="w-4 h-4" strokeWidth={3} />
+                  </span>
                   {b}
                 </li>
               ))}
@@ -176,11 +186,12 @@ export default function NewPatients() {
       </section>
 
       {/* Coverage */}
-      <section className="py-20 md:py-28 bg-[#0B0B0F] text-white">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="relative overflow-hidden py-20 md:py-28 bg-[#0B0B0F] text-white">
+        <div className="aurora opacity-60" />
+        <div className="relative max-w-6xl mx-auto px-6">
           <Reveal>
             <h2 className="font-display font-semibold text-[clamp(2rem,4.5vw,3.4rem)] leading-tight">
-              Who pays? Often, not you.
+              Who pays? <span className="text-gradient">Often, not you.</span>
             </h2>
             <p className="text-gray-400 mt-4 text-lg max-w-xl">
               Care can be covered in many ways. No doctor's referral is needed to see Dr. Sukh.
@@ -190,10 +201,10 @@ export default function NewPatients() {
             {coverage.map((c, i) => (
               <Reveal key={c.title} delay={i * 80}>
                 <div
-                  className={`rounded-3xl p-8 h-full ${
+                  className={`card-lift rounded-3xl p-8 h-full ${
                     c.featured
-                      ? "bg-[#0071E3]"
-                      : "bg-white/5 border border-white/10"
+                      ? "bg-gradient-to-br from-[#2b8cff] to-[#0052b0] shadow-[0_20px_60px_rgba(0,113,227,0.4)]"
+                      : "dark-card"
                   }`}
                 >
                   <p
@@ -219,8 +230,9 @@ export default function NewPatients() {
             <p className="text-center mt-12">
               <a
                 href={TEL}
-                className="inline-block bg-white text-black font-medium px-9 py-3.5 rounded-full hover:bg-gray-200 transition-colors"
+                className="btn-light px-9 py-3.5"
               >
+                <Icon name="phone" className="w-4 h-4" />
                 Book your first visit — {PHONE}
               </a>
             </p>

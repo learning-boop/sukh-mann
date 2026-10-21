@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Reveal from "../components/Reveal.jsx";
+import Icon from "../components/Icon.jsx";
 import { Seo, PageHero } from "../components/Page.jsx";
 import { PHONE, TEL, EMAIL, MAPS_URL, hours } from "../data/site.js";
 
@@ -33,10 +34,13 @@ export default function Contact() {
       {/* Big call CTA */}
       <section className="py-16 md:py-24 text-center px-6">
         <Reveal>
-          <p className="text-gray-500 text-lg">Call us now</p>
+          <p className="eyebrow eyebrow-light">
+            <span className="eyebrow-dot" />
+            Call us now
+          </p>
           <a
             href={TEL}
-            className="font-display font-semibold text-[clamp(2.4rem,8vw,5.5rem)] tracking-tight text-gray-900 hover:text-[#0071E3] transition-colors"
+            className="block mt-5 font-display font-semibold text-[clamp(2.4rem,8vw,5.5rem)] tracking-tight text-gradient hover:opacity-80 transition-opacity"
           >
             {PHONE}
           </a>
@@ -47,7 +51,8 @@ export default function Contact() {
       <section className="pb-20 md:pb-28">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-6">
           <Reveal>
-            <div className="rounded-3xl bg-gray-50 border border-black/5 p-8 h-full">
+            <div className="card-lift rounded-3xl bg-white border border-black/5 shadow-[0_10px_40px_rgba(15,23,42,0.06)] p-8 h-full">
+              <span className="icon-badge mb-6"><Icon name="pin" className="w-6 h-6" /></span>
               <h2 className="font-display font-semibold text-xl">Where we are</h2>
               <p className="text-gray-500 mt-3 text-lg leading-relaxed">
                 202 – 10190 152A Street
@@ -66,7 +71,8 @@ export default function Contact() {
             </div>
           </Reveal>
           <Reveal delay={100}>
-            <div className="rounded-3xl bg-gray-50 border border-black/5 p-8 h-full">
+            <div className="card-lift rounded-3xl bg-white border border-black/5 shadow-[0_10px_40px_rgba(15,23,42,0.06)] p-8 h-full">
+              <span className="icon-badge mb-6"><Icon name="clock" className="w-6 h-6" /></span>
               <h2 className="font-display font-semibold text-xl">When we're open</h2>
               <ul className="mt-4 space-y-2">
                 {hours.map(([d, h]) => (
@@ -79,33 +85,32 @@ export default function Contact() {
             </div>
           </Reveal>
           <Reveal delay={200}>
-            <div className="rounded-3xl bg-gray-50 border border-black/5 p-8 h-full">
+            <div className="card-lift rounded-3xl bg-white border border-black/5 shadow-[0_10px_40px_rgba(15,23,42,0.06)] p-8 h-full">
+              <span className="icon-badge mb-6"><Icon name="mail" className="w-6 h-6" /></span>
               <h2 className="font-display font-semibold text-xl">Send a note</h2>
               <div className="mt-4 space-y-3">
                 <input
                   value={form.name}
                   onChange={set("name")}
                   placeholder="Your name"
-                  className="w-full rounded-xl border border-black/10 bg-white px-4 py-3 outline-none focus:border-[#0071E3]"
+                  className="w-full rounded-xl border border-black/10 bg-gray-50 focus:bg-white px-4 py-3 outline-none transition-shadow focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/15"
                 />
                 <input
                   value={form.phone}
                   onChange={set("phone")}
                   placeholder="Your phone number"
-                  className="w-full rounded-xl border border-black/10 bg-white px-4 py-3 outline-none focus:border-[#0071E3]"
+                  className="w-full rounded-xl border border-black/10 bg-gray-50 focus:bg-white px-4 py-3 outline-none transition-shadow focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/15"
                 />
                 <textarea
                   value={form.message}
                   onChange={set("message")}
                   placeholder="How can we help?"
                   rows={3}
-                  className="w-full rounded-xl border border-black/10 bg-white px-4 py-3 outline-none focus:border-[#0071E3] resize-none"
+                  className="w-full rounded-xl border border-black/10 bg-gray-50 focus:bg-white px-4 py-3 outline-none transition-shadow focus:border-[#0071E3] focus:ring-4 focus:ring-[#0071E3]/15 resize-none"
                 />
-                <button
-                  onClick={send}
-                  className="w-full bg-[#0071E3] hover:bg-[#0077ED] transition-colors text-white font-medium py-3 rounded-full"
-                >
+                <button onClick={send} className="btn-primary w-full py-3">
                   Send email
+                  <Icon name="arrow" className="btn-arrow w-4 h-4" />
                 </button>
                 <p className="text-gray-400 text-xs leading-relaxed">
                   Email is not private. Please do not include personal health details.

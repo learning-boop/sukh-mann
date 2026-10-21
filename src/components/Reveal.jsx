@@ -25,7 +25,7 @@ export default function Reveal({ children, delay = 0, className = "" }) {
       ref={ref}
       style={{ transitionDelay: `${delay}ms` }}
       className={`reveal-anim transition-all duration-700 ease-out ${
-        show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        show ? "opacity-100 translate-y-0 blur-0" : "opacity-0 translate-y-8 blur-[6px]"
       } ${className}`}
     >
       {children}

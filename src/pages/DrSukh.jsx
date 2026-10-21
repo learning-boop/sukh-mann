@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import Reveal from "../components/Reveal.jsx";
+import Icon from "../components/Icon.jsx";
 import PortraitCard from "../components/PortraitCard.jsx";
 import { Seo } from "../components/Page.jsx";
 import { PHONE, TEL, timeline } from "../data/site.js";
@@ -66,13 +67,14 @@ function PhotoHero() {
           <div className="mt-9 flex flex-wrap gap-3">
             <a
               href={TEL}
-              className="inline-flex items-center bg-[#0071E3] hover:bg-[#0077ED] text-white font-medium px-8 py-3.5 rounded-full shadow-[0_10px_30px_rgba(0,113,227,0.45)] transition-all hover:-translate-y-0.5"
+              className="btn-primary px-8 py-3.5"
             >
+              <Icon name="phone" className="w-4 h-4" />
               Call {PHONE}
             </a>
             <a
               href="#story"
-              className="inline-flex items-center bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white font-medium px-8 py-3.5 rounded-full transition-colors"
+              className="btn-ghost px-8 py-3.5"
             >
               His story ↓
             </a>
@@ -154,16 +156,16 @@ export default function DrSukh() {
         <div className="max-w-3xl mx-auto px-6">
           <Reveal>
             <h2 className="font-display font-semibold text-[clamp(2rem,4.5vw,3.4rem)] text-center">
-              His journey.
+              His <span className="text-gradient">journey.</span>
             </h2>
           </Reveal>
           <div className="mt-16 relative">
-            <div className="absolute left-[7px] md:left-1/2 md:-translate-x-px top-2 bottom-2 w-0.5 bg-gray-200" />
+            <div className="absolute left-[7px] md:left-1/2 md:-translate-x-px top-2 bottom-2 w-0.5 bg-gradient-to-b from-[#6EB4FF] via-[#0071E3]/40 to-gray-200" />
             <ul className="space-y-12">
               {timeline.map((t, i) => (
                 <Reveal key={t.title} delay={80}>
                   <li className="relative md:grid md:grid-cols-2 md:gap-12">
-                    <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-1.5 w-4 h-4 rounded-full bg-[#0071E3] ring-4 ring-white" />
+                    <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-1.5 w-4 h-4 rounded-full bg-gradient-to-br from-[#6EB4FF] to-[#0062cc] ring-4 ring-white shadow-[0_0_0_8px_rgba(0,113,227,0.12)]" />
                     <div
                       className={`pl-10 md:pl-0 ${
                         i % 2 === 0 ? "md:text-right md:pr-12" : "md:col-start-2 md:pl-12"
@@ -186,17 +188,19 @@ export default function DrSukh() {
       {/* CTA */}
       <section className="pb-20 md:pb-28 px-6">
         <Reveal>
-          <div className="max-w-6xl mx-auto rounded-3xl bg-[#0071E3] text-white p-10 md:p-16 text-center shadow-[0_20px_60px_rgba(0,113,227,0.35)]">
-            <h2 className="font-display font-semibold text-[clamp(1.9rem,4.5vw,3.2rem)]">
+          <div className="relative overflow-hidden max-w-6xl mx-auto rounded-[2.5rem] bg-gradient-to-br from-[#2b8cff] via-[#0071E3] to-[#3b2fd6] text-white p-10 md:p-16 text-center shadow-[0_30px_80px_rgba(0,113,227,0.4)]">
+            <div className="grid-bg" />
+            <h2 className="relative font-display font-semibold text-[clamp(1.9rem,4.5vw,3.2rem)]">
               Ready to meet Dr. Sukh?
             </h2>
-            <p className="mt-4 text-lg text-blue-100 max-w-md mx-auto">
+            <p className="relative mt-4 text-lg text-blue-100 max-w-md mx-auto">
               Call today. Same-day visits are often possible.
             </p>
             <a
               href={TEL}
-              className="inline-block mt-8 bg-white text-[#0071E3] font-medium px-9 py-3.5 rounded-full hover:bg-blue-50 transition-colors"
+              className="btn-light relative mt-8 px-9 py-3.5"
             >
+              <Icon name="phone" className="w-4 h-4" />
               Call {PHONE}
             </a>
           </div>

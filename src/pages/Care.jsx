@@ -1,4 +1,5 @@
 import Reveal from "../components/Reveal.jsx";
+import Icon from "../components/Icon.jsx";
 import { Seo, PageHero } from "../components/Page.jsx";
 import { PHONE, TEL, careDetails, faqs, conditions } from "../data/site.js";
 
@@ -16,8 +17,9 @@ export default function Care() {
       />
 
       {/* Conditions we treat */}
-      <section className="py-16 md:py-24 bg-[#0B0B0F] text-white -mt-px">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="relative overflow-hidden py-16 md:py-24 bg-[#0B0B0F] text-white -mt-px">
+        <div className="grid-bg" />
+        <div className="relative max-w-6xl mx-auto px-6">
           <Reveal>
             <h2 className="font-display font-semibold text-[clamp(1.8rem,4vw,2.8rem)]">
               Conditions we treat.
@@ -30,7 +32,10 @@ export default function Care() {
           <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3">
             {conditions.map((c, i) => (
               <Reveal key={c} delay={i * 40}>
-                <div className="rounded-2xl bg-white/5 border border-white/10 hover:border-[#0071E3]/60 hover:bg-[#0071E3]/10 transition-colors px-5 py-4 text-center font-medium">
+                <div className="dark-card card-lift h-full rounded-2xl px-4 py-4 flex items-center gap-3 font-medium">
+                  <span className="grid place-items-center w-6 h-6 rounded-full bg-[#0071E3]/25 text-[#6EB4FF] shrink-0">
+                    <Icon name="check" className="w-3.5 h-3.5" strokeWidth={3} />
+                  </span>
                   {c}
                 </div>
               </Reveal>
@@ -43,37 +48,41 @@ export default function Care() {
       {careDetails.map((s, i) => (
         <section
           key={s.title}
-          className={i % 2 === 0 ? "py-16 md:py-24" : "py-16 md:py-24 bg-gray-50"}
+          className={i % 2 === 0 ? "py-16 md:py-24" : "py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white"}
         >
-          <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-12 gap-10 items-start">
-            <Reveal className="md:col-span-5">
-              <p className="font-display text-6xl font-semibold text-[#0071E3]/15">
-                {String(i + 1).padStart(2, "0")}
-              </p>
-              <h2 className="font-display font-semibold text-[clamp(1.8rem,3.5vw,2.6rem)] mt-2 leading-snug">
-                {s.title}
-              </h2>
-              <div className="group mt-6 rounded-3xl overflow-hidden aspect-[4/3] bg-gray-100 shadow-[0_12px_40px_rgba(0,0,0,0.10)]">
+          <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-12 gap-10 md:gap-14 items-center">
+            <Reveal className={`md:col-span-5 ${i % 2 === 1 ? "md:order-2" : ""}`}>
+              <div className="group relative rounded-[2rem] overflow-hidden aspect-[4/3] bg-gray-100 shadow-[0_24px_60px_rgba(15,23,42,0.15)]">
                 <img
                   src={s.img}
                   alt={s.title}
                   loading="lazy"
                   onError={(e) => (e.currentTarget.style.display = "none")}
-                  className="w-full h-full object-cover group-hover:scale-[1.05] transition-transform duration-700 ease-out"
+                  className="w-full h-full object-cover group-hover:scale-[1.06] transition-transform duration-1000 ease-out"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                <span className="absolute top-5 left-5 font-display font-semibold text-sm text-white bg-black/35 backdrop-blur-md border border-white/25 rounded-full px-3.5 py-1">
+                  {String(i + 1).padStart(2, "0")} / {String(careDetails.length).padStart(2, "0")}
+                </span>
               </div>
             </Reveal>
-            <div className="md:col-span-7">
+            <div className={`md:col-span-7 ${i % 2 === 1 ? "md:order-1" : ""}`}>
+              <Reveal>
+                <h2 className="font-display font-semibold text-[clamp(1.8rem,3.5vw,2.6rem)] leading-snug">
+                  {s.title}
+                </h2>
+              </Reveal>
               <Reveal delay={100}>
-                <p className="text-gray-600 text-lg leading-relaxed">{s.what}</p>
+                <p className="mt-4 text-gray-600 text-lg leading-relaxed">{s.what}</p>
               </Reveal>
               <Reveal delay={180}>
                 <div className="mt-6 flex flex-wrap gap-2">
                   {s.helps.map((h) => (
                     <span
                       key={h}
-                      className="text-sm font-medium text-[#0071E3] bg-[#0071E3]/10 border border-[#0071E3]/15 px-4 py-1.5 rounded-full"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium text-[#0062cc] bg-[#0071E3]/8 border border-[#0071E3]/15 px-4 py-1.5 rounded-full"
                     >
+                      <Icon name="check" className="w-3.5 h-3.5" strokeWidth={3} />
                       {h}
                     </span>
                   ))}
@@ -81,9 +90,10 @@ export default function Care() {
               </Reveal>
               {s.quote && (
                 <Reveal delay={260}>
-                  <blockquote className="mt-7 border-l-2 border-[#0071E3] pl-5 text-gray-500 leading-relaxed">
+                  <blockquote className="relative mt-8 rounded-2xl bg-white border border-black/5 shadow-[0_10px_30px_rgba(15,23,42,0.06)] p-6 pl-7 text-gray-600 leading-relaxed overflow-hidden">
+                    <span className="absolute left-0 inset-y-0 w-1 bg-gradient-to-b from-[#6EB4FF] to-[#0062cc]" />
                     “{s.quote.text}”
-                    <footer className="mt-2 text-sm font-medium text-gray-900 not-italic">
+                    <footer className="mt-3 text-sm font-medium text-gray-900 not-italic">
                       — {s.quote.name}
                     </footer>
                   </blockquote>
@@ -95,20 +105,21 @@ export default function Care() {
       ))}
 
       {/* FAQ */}
-      <section className="py-20 md:py-28 bg-[#0B0B0F] text-white">
-        <div className="max-w-3xl mx-auto px-6">
+      <section className="relative overflow-hidden py-20 md:py-28 bg-[#0B0B0F] text-white">
+        <div className="aurora opacity-60" />
+        <div className="relative max-w-3xl mx-auto px-6">
           <Reveal>
             <h2 className="font-display font-semibold text-[clamp(2rem,4.5vw,3.4rem)] text-center">
-              Good questions.
+              Good <span className="text-gradient">questions.</span>
             </h2>
           </Reveal>
           <div className="mt-12 space-y-3">
             {faqs.map((f, i) => (
               <Reveal key={f.q} delay={i * 60}>
-                <details className="group rounded-2xl bg-white/5 border border-white/10 open:border-[#0071E3]/50 transition-colors">
+                <details className="group dark-card rounded-2xl open:border-[#6EB4FF]/50 open:bg-[#0071E3]/10 transition-colors">
                   <summary className="flex items-center justify-between cursor-pointer list-none px-6 py-5 font-medium text-lg">
                     {f.q}
-                    <span className="text-[#6EB4FF] text-2xl leading-none transition-transform duration-300 group-open:rotate-45">
+                    <span className="grid place-items-center w-8 h-8 shrink-0 ml-4 rounded-full bg-white/10 text-[#6EB4FF] text-xl leading-none transition-all duration-300 group-open:rotate-45 group-open:bg-[#0071E3] group-open:text-white">
                       +
                     </span>
                   </summary>
@@ -121,8 +132,9 @@ export default function Care() {
             <p className="text-center mt-12">
               <a
                 href={TEL}
-                className="inline-block bg-[#0071E3] hover:bg-[#0077ED] transition-colors text-white font-medium px-9 py-3.5 rounded-full"
+                className="btn-primary px-9 py-3.5"
               >
+                <Icon name="phone" className="w-4 h-4" />
                 Still unsure? Call {PHONE}
               </a>
             </p>

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal.jsx";
 import PortraitCard from "../components/PortraitCard.jsx";
+import Icon from "../components/Icon.jsx";
 import { PHONE, TEL, painCards, steps, featuredServices, testimonials } from "../data/site.js";
 import heroImg from "../assets/hero-athlete.jpg";
 
@@ -52,11 +53,15 @@ function ParallaxImg({ src, alt, direction = 1 }) {
 function ServicesAccordion() {
   const [active, setActive] = useState(0);
   return (
-    <section className="py-20 md:py-32 bg-[#0B0B0F] text-white">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="relative overflow-hidden py-20 md:py-32 bg-[#0B0B0F] text-white">
+      <div className="aurora opacity-60" />
+      <div className="relative max-w-6xl mx-auto px-6">
         <div className="flex items-end justify-between gap-6">
           <div>
-            <p className="text-[#6EB4FF] text-sm font-semibold tracking-widest uppercase">Our care</p>
+            <p className="eyebrow">
+              <span className="eyebrow-dot" />
+              Our care
+            </p>
             <h2 className="font-display font-semibold text-[clamp(2.2rem,5vw,3.8rem)] mt-3 leading-tight">
               Many ways to help.
               <br />
@@ -144,9 +149,10 @@ function ServicesAccordion() {
         <div className="mt-10 text-center">
           <Link
             to="/care"
-            className="inline-flex items-center gap-2 border border-white/25 hover:border-white/70 transition-colors text-white font-medium px-8 py-3.5 rounded-full"
+            className="btn-ghost px-8 py-3.5"
           >
-            See all 7 services &amp; conditions <span aria-hidden="true">&rarr;</span>
+            See all services &amp; conditions
+            <Icon name="arrow" className="btn-arrow w-4 h-4" />
           </Link>
         </div>
       </div>
@@ -170,25 +176,50 @@ export default function Home() {
         <div className="hidden md:block absolute inset-0 bg-black/35" />
         <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-[#0B0B0F]/85 via-[#0B0B0F]/35 to-transparent" />
         <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-[#0B0B0F]/55 via-transparent to-[#0B0B0F]/30" />
-        <div className="relative z-10 max-w-6xl mx-auto px-6 w-full pt-28 md:pt-24 md:pb-32">
+        <div className="hidden md:block aurora opacity-70" />
+        <div className="relative z-10 max-w-6xl mx-auto px-6 w-full pt-32 md:pt-36 md:pb-36">
           <div className="max-w-xl mx-auto md:mx-0 text-center md:text-left">
+            <Reveal>
+              <p className="eyebrow">
+                <span className="eyebrow-dot" />
+                Surrey chiropractor · Since 2007
+              </p>
+            </Reveal>
             <Reveal delay={100}>
-              <h1 className="font-display font-semibold tracking-tight leading-[1.04] text-[clamp(3.2rem,8vw,5.8rem)]">
-               Restore Movement               <br />
-                Rebuild Confidence             </h1>
+              <h1 className="font-display font-semibold tracking-tight leading-[1.02] text-[clamp(3rem,7.5vw,5.8rem)] mt-6">
+                Restore movement.
+                <br />
+                <span className="text-gradient">Rebuild confidence.</span>
+              </h1>
             </Reveal>
             <Reveal delay={220}>
-              <p className="mt-6 md:mt-8 text-lg text-gray-300 leading-relaxed max-w-sm mx-auto md:mx-0">
-Trusted chiropractic care in Surrey—bringing the same high standard of care provided to professional athletes to you.              </p>
+              <p className="mt-6 md:mt-8 text-lg text-gray-300 leading-relaxed max-w-md mx-auto md:mx-0">
+                Trusted chiropractic care in Surrey, with the same high standard of care given to
+                professional athletes.
+              </p>
             </Reveal>
             <Reveal delay={340}>
-              <a
-                href={TEL}
-                className="mt-10 inline-flex items-center gap-3 bg-white text-black text-base font-medium pl-8 pr-6 py-4 rounded-full hover:bg-gray-100 transition-colors"
-              >
-                Book Your Visit
-                <span aria-hidden="true" className="text-lg leading-none">&rsaquo;</span>
-              </a>
+              <div className="mt-10 flex flex-wrap gap-3 justify-center md:justify-start">
+                <a href={TEL} className="btn-light pl-8 pr-6 py-4 text-base">
+                  Book your visit
+                  <Icon name="arrow" className="btn-arrow w-4 h-4" />
+                </a>
+                <Link to="/dr-sukh-mann" className="btn-ghost px-7 py-4 text-base">
+                  Meet Dr. Sukh
+                </Link>
+              </div>
+            </Reveal>
+            <Reveal delay={460}>
+              <ul className="mt-10 flex flex-wrap gap-x-6 gap-y-3 justify-center md:justify-start text-sm text-gray-300">
+                {["No referral needed", "ICBC: you pay $0", "Open Saturdays"].map((t) => (
+                  <li key={t} className="flex items-center gap-2">
+                    <span className="grid place-items-center w-5 h-5 rounded-full bg-[#0071E3]/25 text-[#6EB4FF]">
+                      <Icon name="check" className="w-3 h-3" strokeWidth={3} />
+                    </span>
+                    {t}
+                  </li>
+                ))}
+              </ul>
             </Reveal>
           </div>
         </div>
@@ -212,23 +243,32 @@ Trusted chiropractic care in Surrey—bringing the same high standard of care pr
           Built around you.
         </div>
         <div className="hidden md:flex absolute bottom-8 inset-x-0 justify-center z-10">
-          <a href="#help" aria-label="Scroll to learn more" className="text-white/70 hover:text-white transition-colors text-2xl leading-none">
-            &#x2304;
+          <a
+            href="#help"
+            aria-label="Scroll to learn more"
+            className="flex justify-center w-6 h-10 rounded-full border-2 border-white/40 hover:border-white transition-colors"
+          >
+            <span className="mt-2 w-1 h-2 rounded-full bg-white animate-bounce" />
           </a>
         </div>
       </section>
 
       {/* ============ TRUST STRIP ============ */}
-      <section className="border-b border-black/5">
-        <div className="max-w-6xl mx-auto px-6 py-10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <section className="relative z-10 -mt-px bg-[#0B0B0F] pb-12 md:pb-16 px-6">
+        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
           {[
-            "Trusted by the BC Lions",
-            "Served at the Olympics",
-            "Open 6 days a week",
-            "ICBC pays. You pay $0.",
-          ].map((t, i) => (
-            <Reveal key={t} delay={i * 90}>
-              <p className="text-sm md:text-[15px] font-medium text-gray-700">{t}</p>
+            { icon: "award", t: "Trusted by the BC Lions" },
+            { icon: "star", t: "Served at the Olympics" },
+            { icon: "calendar", t: "Open 6 days a week" },
+            { icon: "shield", t: "ICBC pays. You pay $0." },
+          ].map((x, i) => (
+            <Reveal key={x.t} delay={i * 90}>
+              <div className="dark-card card-lift h-full rounded-2xl px-4 py-5 md:px-5 flex flex-col md:flex-row items-center gap-3 text-center md:text-left">
+                <span className="icon-badge w-10 h-10 rounded-xl shrink-0">
+                  <Icon name={x.icon} className="w-5 h-5" />
+                </span>
+                <p className="text-sm md:text-[15px] font-medium text-gray-200 leading-snug">{x.t}</p>
+              </div>
             </Reveal>
           ))}
         </div>
@@ -240,15 +280,16 @@ Trusted chiropractic care in Surrey—bringing the same high standard of care pr
           <Reveal>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
               <div>
-                <p className="text-[#0071E3] text-sm font-semibold tracking-widest uppercase">
+                <p className="eyebrow eyebrow-light">
+                  <span className="eyebrow-dot" />
                   What we treat
                 </p>
                 <h2 className="font-display font-semibold text-[clamp(2.2rem,5vw,3.8rem)] mt-3 leading-tight">
-                 Where does it hurt?
+                  Where does it <span className="text-gradient">hurt?</span>
                 </h2>
               </div>
               <p className="text-gray-500 text-lg max-w-sm md:text-right">
-                Find your condition. We’re here to help
+                Find your condition. We’re here to help.
               </p>
             </div>
           </Reveal>
@@ -297,19 +338,29 @@ Trusted chiropractic care in Surrey—bringing the same high standard of care pr
       </section>
 
       {/* ============ HOW IT WORKS ============ */}
-      <section className="py-20 md:py-32 bg-gray-50">
+      <section className="relative py-20 md:py-32 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
         <div className="max-w-6xl mx-auto px-6">
           <Reveal>
-            <h2 className="font-display font-semibold text-[clamp(2.2rem,5vw,3.8rem)] text-center">
-              Getting help is easy.
-            </h2>
+            <div className="text-center">
+              <p className="eyebrow eyebrow-light">
+                <span className="eyebrow-dot" />
+                How it works
+              </p>
+              <h2 className="font-display font-semibold text-[clamp(2.2rem,5vw,3.8rem)] mt-4">
+                Getting help is <span className="text-gradient">easy.</span>
+              </h2>
+            </div>
           </Reveal>
-          <div className="mt-16 grid md:grid-cols-3 gap-10">
+          <div className="relative mt-16 grid md:grid-cols-3 gap-6">
+            {/* Connector line behind the cards */}
+            <div className="hidden md:block absolute top-[3.25rem] left-[16%] right-[16%] h-px bg-gradient-to-r from-transparent via-[#0071E3]/40 to-transparent" />
             {steps.map((s, i) => (
-              <Reveal key={s.n} delay={i * 120}>
-                <div className="text-center md:text-left">
-                  <div className="font-display text-6xl font-semibold text-[#0071E3]/20">{s.n}</div>
-                  <h3 className="font-display font-semibold text-2xl mt-3">{s.title}</h3>
+              <Reveal key={s.n} delay={i * 140}>
+                <div className="card-lift relative h-full rounded-3xl bg-white border border-black/5 shadow-[0_10px_40px_rgba(15,23,42,0.06)] p-8 text-center">
+                  <div className="relative mx-auto w-14 h-14 rounded-2xl grid place-items-center font-display text-2xl font-semibold text-white bg-gradient-to-br from-[#2b8cff] to-[#0062cc] shadow-[0_12px_30px_rgba(0,113,227,0.35)]">
+                    {s.n}
+                  </div>
+                  <h3 className="font-display font-semibold text-2xl mt-6">{s.title}</h3>
                   <p className="text-gray-500 mt-3 leading-relaxed">{s.text}</p>
                 </div>
               </Reveal>
@@ -322,8 +373,9 @@ Trusted chiropractic care in Surrey—bringing the same high standard of care pr
       <ServicesAccordion />
 
       {/* ============ MEET DR SUKH ============ */}
-      <section className="py-20 md:py-32 bg-[#0B0B0F] text-white overflow-hidden">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center">
+      <section className="relative py-20 md:py-32 bg-[#0B0B0F] text-white overflow-hidden">
+        <div className="grid-bg" />
+        <div className="relative max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center">
           <Reveal>
             <PortraitCard
               src="/images/dr-sukh-portrait.jpg"
@@ -352,9 +404,10 @@ Trusted chiropractic care in Surrey—bringing the same high standard of care pr
             <Reveal delay={280}>
               <Link
                 to="/dr-sukh-mann"
-                className="inline-block mt-8 text-[#6EB4FF] font-medium hover:underline text-lg"
+                className="btn-primary mt-9 px-8 py-3.5 text-base"
               >
-                Meet Dr. Sukh →
+                Meet Dr. Sukh
+                <Icon name="arrow" className="btn-arrow w-4 h-4" />
               </Link>
             </Reveal>
           </div>
@@ -362,35 +415,44 @@ Trusted chiropractic care in Surrey—bringing the same high standard of care pr
       </section>
 
       {/* ============ TESTIMONIALS ============ */}
-      <section className="py-20 md:py-28 overflow-hidden">
+      <section className="py-20 md:py-32 overflow-hidden bg-gradient-to-b from-white to-gray-50">
         <Reveal>
-          <h2 className="font-display font-semibold text-[clamp(2rem,4.5vw,3.2rem)] text-center px-6">
-            Real words from real patients.
-          </h2>
+          <div className="text-center px-6">
+            <p className="eyebrow eyebrow-light">
+              <span className="eyebrow-dot" />
+              Patient stories
+            </p>
+            <h2 className="font-display font-semibold text-[clamp(2rem,4.5vw,3.4rem)] mt-4">
+              Real words from <span className="text-gradient">real patients.</span>
+            </h2>
+          </div>
         </Reveal>
-        <div className="mt-12 relative">
-          <div className="marquee-track flex gap-5 w-max px-5">
+        <div className="mt-14 relative">
+          <div className="marquee-track flex gap-5 w-max px-5 py-4">
             {[...testimonials, ...testimonials].map((t, i) => (
               <figure
                 key={i}
-                className="w-[320px] md:w-[380px] shrink-0 rounded-3xl bg-gray-50 p-7 border border-black/5"
+                className="card-lift relative w-[320px] md:w-[380px] shrink-0 rounded-3xl bg-white p-7 border border-black/5 shadow-[0_10px_30px_rgba(15,23,42,0.06)] flex flex-col"
               >
-                <blockquote className="text-gray-700 leading-relaxed text-[15px]">
-                  “{t.quote}”
+                <svg viewBox="0 0 32 24" className="w-9 h-7 text-[#0071E3]/80" fill="currentColor" aria-hidden="true">
+                  <path d="M9 0C4 0 0 4 0 9.5S3.6 18 8.4 18c.5 0 1 0 1.5-.2C8.8 20.4 6.6 22 4 22.6l.6 1.4C11.4 22.6 16 17 16 10V8.5C16 3.6 13 0 9 0Zm16 0c-5 0-9 4-9 9.5S19.6 18 24.4 18c.5 0 1 0 1.5-.2-1.1 2.6-3.3 4.2-5.9 4.8l.6 1.4C27.4 22.6 32 17 32 10V8.5C32 3.6 29 0 25 0Z" />
+                </svg>
+                <blockquote className="mt-3 text-gray-700 leading-relaxed text-[15px] flex-1">
+                  {t.quote}
                 </blockquote>
-                <figcaption className="mt-4 text-sm font-medium text-gray-900">
-                  — {t.name}
+                <figcaption className="mt-6 flex items-center gap-3">
+                  <span className="grid place-items-center w-10 h-10 rounded-full bg-gradient-to-br from-[#2b8cff] to-[#0062cc] text-white font-semibold text-sm">
+                    {t.name.charAt(0)}
+                  </span>
+                  <span className="text-sm font-medium text-gray-900">{t.name}</span>
                 </figcaption>
               </figure>
             ))}
           </div>
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-transparent" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-gray-50 to-transparent" />
         </div>
       </section>
-
-      
-
     </main>
   );
 }
