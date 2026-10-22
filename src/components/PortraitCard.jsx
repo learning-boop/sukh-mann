@@ -68,8 +68,8 @@ export default function PortraitCard({
         {badges.map((b, i) => (
           <div
             key={b.title}
-            className={`portrait-badge absolute flex items-center gap-3 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_10px_40px_rgba(0,0,0,0.4)] px-4 py-3 text-white ${
-              i % 2 === 0 ? "-left-4 md:-left-10 top-[12%]" : "-right-4 md:-right-10 bottom-[14%]"
+            className={`portrait-badge absolute flex items-center gap-3 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_10px_40px_rgba(0,0,0,0.4)] px-3 py-2.5 md:px-4 md:py-3 text-white max-w-[85%] ${
+              i % 2 === 0 ? "left-3 md:-left-10 top-[8%] md:top-[12%]" : "right-3 md:-right-10 bottom-[8%] md:bottom-[14%]"
             }`}
             style={{ animationDelay: `${i * 1.6}s` }}
           >

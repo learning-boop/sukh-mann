@@ -64,17 +64,17 @@ function PhotoHero() {
           </p>
         </Reveal>
         <Reveal delay={360}>
-          <div className="mt-9 flex flex-wrap gap-3">
+          <div className="mt-9 flex flex-col sm:flex-row gap-3">
             <a
               href={TEL}
-              className="btn-primary px-8 py-3.5"
+              className="btn-primary w-full sm:w-auto px-8 py-3.5"
             >
               <Icon name="phone" className="w-4 h-4" />
               Call {PHONE}
             </a>
             <a
               href="#story"
-              className="btn-ghost px-8 py-3.5"
+              className="btn-ghost w-full sm:w-auto px-8 py-3.5"
             >
               His story ↓
             </a>

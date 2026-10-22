@@ -177,7 +177,22 @@ export default function Home() {
         <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-[#0B0B0F]/85 via-[#0B0B0F]/35 to-transparent" />
         <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-[#0B0B0F]/55 via-transparent to-[#0B0B0F]/30" />
         <div className="hidden md:block aurora opacity-70" />
-        <div className="relative z-10 max-w-6xl mx-auto px-6 w-full pt-32 md:pt-36 md:pb-36">
+        {/* Mobile: photo first, cropped tall and centred on the player, fading into the text */}
+        <div className="md:hidden relative h-[64svh] min-h-[420px] max-h-[620px] overflow-hidden">
+          <img
+            src={heroImg}
+            alt="Ice hockey player skating hard under arena lights"
+            fetchpriority="high"
+            className="hero-photo absolute inset-0 w-full h-full object-cover object-[80%_center]"
+          />
+          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#0B0B0F]/80 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#0B0B0F] via-[#0B0B0F]/70 to-transparent" />
+          <p className="absolute bottom-5 inset-x-0 text-center text-gray-300 text-sm tracking-wide">
+            Care with precision. Built around you.
+          </p>
+        </div>
+        <div className="relative z-10 max-w-6xl mx-auto px-6 w-full pt-6 pb-14 md:pt-36 md:pb-36">
           <div className="max-w-xl mx-auto md:mx-0 text-center md:text-left">
             <Reveal>
               <p className="eyebrow">
@@ -186,7 +201,7 @@ export default function Home() {
               </p>
             </Reveal>
             <Reveal delay={100}>
-              <h1 className="font-display font-semibold tracking-tight leading-[1.02] text-[clamp(3rem,7.5vw,5.8rem)] mt-6">
+              <h1 className="font-display font-semibold tracking-tight leading-[1.02] text-[clamp(2.6rem,7.5vw,5.8rem)] mt-5 md:mt-6">
                 Restore movement.
                 <br />
                 <span className="text-gradient">Rebuild confidence.</span>
@@ -199,18 +214,18 @@ export default function Home() {
               </p>
             </Reveal>
             <Reveal delay={340}>
-              <div className="mt-10 flex flex-wrap gap-3 justify-center md:justify-start">
-                <a href={TEL} className="btn-light pl-8 pr-6 py-4 text-base">
+              <div className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+                <a href={TEL} className="btn-light w-full sm:w-auto pl-8 pr-6 py-4 text-base">
                   Book your visit
                   <Icon name="arrow" className="btn-arrow w-4 h-4" />
                 </a>
-                <Link to="/dr-sukh-mann" className="btn-ghost px-7 py-4 text-base">
+                <Link to="/dr-sukh-mann" className="btn-ghost w-full sm:w-auto px-7 py-4 text-base">
                   Meet Dr. Sukh
                 </Link>
               </div>
             </Reveal>
             <Reveal delay={460}>
-              <ul className="mt-10 flex flex-wrap gap-x-6 gap-y-3 justify-center md:justify-start text-sm text-gray-300">
+              <ul className="mt-8 md:mt-10 flex flex-wrap gap-x-5 gap-y-3 justify-center md:justify-start text-sm text-gray-300">
                 {["No referral needed", "ICBC: you pay $0", "Open Saturdays"].map((t) => (
                   <li key={t} className="flex items-center gap-2">
                     <span className="grid place-items-center w-5 h-5 rounded-full bg-[#0071E3]/25 text-[#6EB4FF]">
@@ -222,20 +237,6 @@ export default function Home() {
               </ul>
             </Reveal>
           </div>
-        </div>
-        {/* Mobile: full photo shown clearly below the text, blended into the dark bg */}
-        <div className="md:hidden relative mt-10">
-          <img
-            src={heroImg}
-            alt="Ice hockey player skating hard under arena lights"
-            className="w-full h-auto"
-          />
-          <div className="absolute inset-0 bg-black/25" />
-          <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#0B0B0F] to-transparent" />
-          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0B0B0F] to-transparent" />
-          <p className="absolute bottom-4 inset-x-0 text-center text-gray-400 text-sm">
-            Care with precision. Built around you.
-          </p>
         </div>
         <div className="hidden md:block absolute bottom-10 left-6 md:left-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))] z-10 text-gray-400 text-sm leading-relaxed">
           Care with precision.
