@@ -1,7 +1,10 @@
-import { Link } from "react-router-dom";
-import Reveal from "./Reveal.jsx";
+import { Link, useLocation } from "react-router-dom";
+import Curve from "./Curve.jsx";
 import Icon from "./Icon.jsx";
 import { PHONE, TEL, EMAIL, MAPS_URL, hours } from "../data/site.js";
+
+// Colour of the last section on each page, where it is light (dark endings get a plain divider)
+const LIGHT_ENDING = { "/": "#f9fafb", "/contact": "#fff", "/dr-sukh-mann": "#fff" };
 
 const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
@@ -15,40 +18,20 @@ const pages = [
 
 export default function Footer() {
   const today = DAYS[new Date().getDay()];
+  const above = LIGHT_ENDING[useLocation().pathname];
 
   return (
-    <footer className="relative overflow-hidden bg-[#0B0B0F] text-white pt-20 md:pt-28 pb-32 md:pb-12">
+    <footer
+      className={`relative overflow-hidden bg-[#0B0B0F] text-white pb-32 md:pb-12 ${
+        above ? "pt-24 md:pt-32" : "border-t border-white/10 pt-16 md:pt-20"
+      }`}
+    >
+      {above && <Curve position="top" fill={above} />}
       <div className="aurora opacity-80" />
 
       <div className="relative max-w-6xl mx-auto px-6">
-        {/* CTA card */}
-        <Reveal>
-          <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-[#0d2a4f] via-[#0B0B0F] to-[#1a1240] px-6 py-14 md:p-20 text-center">
-            <div className="grid-bg" />
-            <p className="relative eyebrow">
-              <span className="eyebrow-dot" />
-              Same-day visits often possible
-            </p>
-            <h2 className="relative font-display font-semibold text-[clamp(2.6rem,7vw,5.5rem)] leading-none mt-6">
-              Feel better <span className="text-gradient">soon.</span>
-            </h2>
-            <p className="relative mt-5 text-gray-300 text-lg max-w-md mx-auto">
-              No referral needed. Call and we will find a time that works for you.
-            </p>
-            <div className="relative mt-9 flex flex-wrap justify-center gap-3">
-              <a href={TEL} className="btn-primary px-9 py-4 text-lg">
-                <Icon name="phone" className="w-5 h-5" />
-                Call {PHONE}
-              </a>
-              <Link to="/new-patients" className="btn-ghost px-8 py-4 text-lg">
-                First visit info
-                <Icon name="arrow" className="btn-arrow w-4 h-4" />
-              </Link>
-            </div>
-          </div>
-        </Reveal>
 
-        <div className="mt-16 md:mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3">
               <img

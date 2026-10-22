@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import Reveal from "../components/Reveal.jsx";
+import Curve from "../components/Curve.jsx";
 import Icon from "../components/Icon.jsx";
 import PortraitCard from "../components/PortraitCard.jsx";
 import { Seo } from "../components/Page.jsx";
@@ -109,7 +110,7 @@ export default function DrSukh() {
       <PhotoHero />
 
       {/* Photo + intro */}
-      <section id="story" className="py-20 md:py-28 bg-[#0B0B0F] text-white -mt-px overflow-hidden scroll-mt-20">
+      <section id="story" className="relative pt-20 pb-28 md:pt-28 md:pb-40 bg-[#0B0B0F] text-white -mt-px overflow-hidden scroll-mt-20">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center">
           <Reveal>
             <PortraitCard
@@ -149,6 +150,7 @@ export default function DrSukh() {
             </Reveal>
           </div>
         </div>
+        <Curve position="bottom" fill="#fff" />
       </section>
 
       {/* Timeline */}
@@ -156,7 +158,7 @@ export default function DrSukh() {
         <div className="max-w-3xl mx-auto px-6">
           <Reveal>
             <h2 className="font-display font-semibold text-[clamp(2rem,4.5vw,3.4rem)] text-center">
-              His <span className="text-gradient">journey.</span>
+              His <span className="text-gradient squiggle">journey.</span>
             </h2>
           </Reveal>
           <div className="mt-16 relative">

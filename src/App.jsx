@@ -10,6 +10,23 @@ import Care from "./pages/Care.jsx";
 import NewPatients from "./pages/NewPatients.jsx";
 import Contact from "./pages/Contact.jsx";
 
+/* Feeds the cursor position to card spotlights (.card-lift / .dark-card) */
+function CardSpotlight() {
+  useEffect(() => {
+    if (!window.matchMedia("(hover: hover)").matches) return;
+    const onMove = (e) => {
+      const el = e.target.closest?.(".card-lift, .dark-card");
+      if (!el) return;
+      const r = el.getBoundingClientRect();
+      el.style.setProperty("--mx", `${e.clientX - r.left}px`);
+      el.style.setProperty("--my", `${e.clientY - r.top}px`);
+    };
+    document.addEventListener("pointermove", onMove, { passive: true });
+    return () => document.removeEventListener("pointermove", onMove);
+  }, []);
+  return null;
+}
+
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -22,6 +39,7 @@ export default function App() {
   return (
     <div className="font-body bg-white text-gray-900 antialiased">
       <ScrollToTop />
+      <CardSpotlight />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

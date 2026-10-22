@@ -1,4 +1,5 @@
 import Reveal from "../components/Reveal.jsx";
+import Curve from "../components/Curve.jsx";
 import Icon from "../components/Icon.jsx";
 import { Seo, PageHero } from "../components/Page.jsx";
 import { PHONE, TEL } from "../data/site.js";
@@ -104,15 +105,14 @@ export default function NewPatients() {
 
           <Reveal delay={150} className="md:sticky md:top-28">
             <div className="relative">
-              {/* Swap for a real clinic photo: save as public/images/first-visit.jpg */}
               <div className="relative rounded-3xl overflow-hidden aspect-[4/5] bg-gradient-to-br from-gray-100 to-gray-200 shadow-[0_24px_60px_rgba(0,0,0,0.12)]">
                 <div className="absolute inset-0 flex items-center justify-center text-5xl">🤝</div>
                 <img
-                  src="images/new-patient.png"
-                  alt="A friendly doctor ready to welcome you"
+                  src="/images/care/first-visit.jpg"
+                  alt="Dr. Sukh Mann going over a patient's assessment notes with her"
                   loading="lazy"
                   onError={(e) => (e.currentTarget.style.display = "none")}
-                  className="relative w-full h-full object-cover"
+                  className="relative w-full h-full object-cover object-[42%_center]"
                 />
               </div>
               <div className="absolute -bottom-6 left-6 flex items-center gap-4 bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_16px_40px_rgba(0,0,0,0.18)] border border-black/5 px-5 py-4">
@@ -161,7 +161,7 @@ export default function NewPatients() {
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center">
           <Reveal>
             <h2 className="font-display font-semibold text-[clamp(2rem,4.5vw,3.4rem)] leading-tight">
-              What to <span className="text-gradient">bring.</span>
+              What to <span className="text-gradient squiggle">bring.</span>
             </h2>
             <p className="mt-5 text-gray-500 text-lg leading-relaxed">
               Keep it simple. Wear something loose, and bring the numbers that fit your situation.
@@ -186,12 +186,13 @@ export default function NewPatients() {
       </section>
 
       {/* Coverage */}
-      <section className="relative overflow-hidden py-20 md:py-28 bg-[#0B0B0F] text-white">
+      <section className="relative overflow-hidden pt-24 pb-20 md:pt-40 md:pb-28 bg-[#0B0B0F] text-white">
+        <Curve position="top" fill="#f9fafb" />
         <div className="aurora opacity-60" />
         <div className="relative max-w-6xl mx-auto px-6">
           <Reveal>
             <h2 className="font-display font-semibold text-[clamp(2rem,4.5vw,3.4rem)] leading-tight">
-              Who pays? <span className="text-gradient">Often, not you.</span>
+              Who pays? <span className="text-gradient squiggle">Often, not you.</span>
             </h2>
             <p className="text-gray-400 mt-4 text-lg max-w-xl">
               Care can be covered in many ways. No doctor's referral is needed to see Dr. Sukh.

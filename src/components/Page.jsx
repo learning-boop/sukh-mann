@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Reveal from "./Reveal.jsx";
+import Curve from "./Curve.jsx";
 
 export function Seo({ title, description }) {
   useEffect(() => {
@@ -16,9 +17,9 @@ export function Seo({ title, description }) {
 }
 
 /* Dark page header used by every inner page: aurora glow + faint grid */
-export function PageHero({ eyebrow, title, sub }) {
+export function PageHero({ eyebrow, title, sub, curve = "#fff" }) {
   return (
-    <section className="relative overflow-hidden bg-[#0B0B0F] text-white pt-36 pb-16 md:pt-48 md:pb-28">
+    <section className="relative overflow-hidden bg-[#0B0B0F] text-white pt-36 pb-24 md:pt-48 md:pb-36">
       <div className="aurora" />
       <div className="grid-bg" />
       <div className="relative max-w-6xl mx-auto px-6">
@@ -39,7 +40,11 @@ export function PageHero({ eyebrow, title, sub }) {
           </Reveal>
         )}
       </div>
-      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#6EB4FF]/40 to-transparent" />
+      {curve ? (
+        <Curve position="bottom" fill={curve} />
+      ) : (
+        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#6EB4FF]/40 to-transparent" />
+      )}
     </section>
   );
 }

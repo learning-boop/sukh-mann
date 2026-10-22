@@ -1,11 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal.jsx";
+import Curve from "../components/Curve.jsx";
 import PortraitCard from "../components/PortraitCard.jsx";
 import Icon from "../components/Icon.jsx";
 import { PHONE, TEL, painCards, steps, featuredServices, testimonials } from "../data/site.js";
 import heroImg from "../assets/hero-athlete.jpg";
 
+
+const teams = ["BC Lions", "Vancouver Whitecaps", "Rowing Canada", "SFU Hockey", "Olympic Games", "Paralympic Games", "Pan Am Games", "IRONMAN\u00ae", "World Police & Fire Games", "Vancouver Marathon"];
 
 /* Scroll parallax: image drifts horizontally as the card moves through the viewport.
    direction: 1 = left-to-right, -1 = right-to-left. Disabled for reduced motion. */
@@ -53,7 +56,8 @@ function ParallaxImg({ src, alt, direction = 1 }) {
 function ServicesAccordion() {
   const [active, setActive] = useState(0);
   return (
-    <section className="relative overflow-hidden py-20 md:py-32 bg-[#0B0B0F] text-white">
+    <section className="relative overflow-hidden py-24 md:py-40 bg-[#0B0B0F] text-white">
+      <Curve position="top" fill="#fff" />
       <div className="aurora opacity-60" />
       <div className="relative max-w-6xl mx-auto px-6">
         <div className="flex items-end justify-between gap-6">
@@ -156,6 +160,7 @@ function ServicesAccordion() {
           </Link>
         </div>
       </div>
+      <Curve position="bottom" fill="#fff" />
     </section>
   );
 }
@@ -255,7 +260,7 @@ export default function Home() {
       </section>
 
       {/* ============ TRUST STRIP ============ */}
-      <section className="relative z-10 -mt-px bg-[#0B0B0F] pb-12 md:pb-16 px-6">
+      <section className="relative z-10 -mt-px bg-[#0B0B0F] pb-20 md:pb-28 px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
           {[
             { icon: "award", t: "Trusted by the BC Lions" },
@@ -273,6 +278,7 @@ export default function Home() {
             </Reveal>
           ))}
         </div>
+        <Curve position="bottom" fill="#fff" />
       </section>
 
       {/* ============ WHAT HURTS — BENTO GRID ============ */}
@@ -286,7 +292,7 @@ export default function Home() {
                   What we treat
                 </p>
                 <h2 className="font-display font-semibold text-[clamp(2.2rem,5vw,3.8rem)] mt-3 leading-tight">
-                  Where does it <span className="text-gradient">hurt?</span>
+                  Where does it <span className="text-gradient squiggle">hurt?</span>
                 </h2>
               </div>
               <p className="text-gray-500 text-lg max-w-sm md:text-right">
@@ -338,49 +344,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============ HOW IT WORKS ============ */}
-      <section className="relative py-20 md:py-32 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
-        <div className="max-w-6xl mx-auto px-6">
-          <Reveal>
-            <div className="text-center">
-              <p className="eyebrow eyebrow-light">
-                <span className="eyebrow-dot" />
-                How it works
-              </p>
-              <h2 className="font-display font-semibold text-[clamp(2.2rem,5vw,3.8rem)] mt-4">
-                Getting help is <span className="text-gradient">easy.</span>
-              </h2>
-            </div>
-          </Reveal>
-          <div className="relative mt-16 grid md:grid-cols-3 gap-6">
-            {/* Connector line behind the cards */}
-            <div className="hidden md:block absolute top-[3.25rem] left-[16%] right-[16%] h-px bg-gradient-to-r from-transparent via-[#0071E3]/40 to-transparent" />
-            {steps.map((s, i) => (
-              <Reveal key={s.n} delay={i * 140}>
-                <div className="card-lift relative h-full rounded-3xl bg-white border border-black/5 shadow-[0_10px_40px_rgba(15,23,42,0.06)] p-8 text-center">
-                  <div className="relative mx-auto w-14 h-14 rounded-2xl grid place-items-center font-display text-2xl font-semibold text-white bg-gradient-to-br from-[#2b8cff] to-[#0062cc] shadow-[0_12px_30px_rgba(0,113,227,0.35)]">
-                    {s.n}
-                  </div>
-                  <h3 className="font-display font-semibold text-2xl mt-6">{s.title}</h3>
-                  <p className="text-gray-500 mt-3 leading-relaxed">{s.text}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ============ SERVICES ACCORDION ============ */}
-      <ServicesAccordion />
-
       {/* ============ MEET DR SUKH ============ */}
-      <section className="relative py-20 md:py-32 bg-[#0B0B0F] text-white overflow-hidden">
+      <section className="relative pt-24 pb-24 md:pt-40 md:pb-36 bg-[#0B0B0F] text-white overflow-hidden">
+        <Curve position="top" fill="#fff" />
         <div className="grid-bg" />
         <div className="relative max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center">
           <Reveal>
             <PortraitCard
-              src="/images/dr-sukh-portrait.jpg"
-              alt="Dr. Sukh Mann, Chiropractor, smiling in his Surrey clinic"
+              src="/images/dr-sukh-consult.webp"
+              position="22% 40%"
+              alt="Dr. Sukh Mann explaining a knee model to a patient in his clinic"
               badges={[
                 { icon: "🏅", title: "Olympics & Paralympics", sub: "Team care at world events" },
                 { icon: "🏈", title: "BC Lions", sub: "Pro team chiropractor" },
@@ -413,7 +386,63 @@ export default function Home() {
             </Reveal>
           </div>
         </div>
+
+        {/* Teams & events he has worked with */}
+        <div className="relative mt-16 md:mt-24">
+          <p className="text-center text-xs md:text-sm font-semibold tracking-[0.2em] uppercase text-gray-500">
+            Teams &amp; events Dr. Sukh has cared for
+          </p>
+          <div className="fade-edges mt-6 overflow-hidden">
+            <div className="marquee-track flex w-max gap-3">
+              {[...teams, ...teams].map((t, i) => (
+                <span
+                  key={i}
+                  className="shrink-0 inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.04] px-5 py-2.5 text-sm md:text-base font-display font-semibold text-gray-200"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#6EB4FF]" />
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+        <Curve position="bottom" fill="#f9fafb" />
       </section>
+
+      {/* ============ HOW IT WORKS ============ */}
+      <section className="relative py-20 md:py-32 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+        <div className="max-w-6xl mx-auto px-6">
+          <Reveal>
+            <div className="text-center">
+              <p className="eyebrow eyebrow-light">
+                <span className="eyebrow-dot" />
+                How it works
+              </p>
+              <h2 className="font-display font-semibold text-[clamp(2.2rem,5vw,3.8rem)] mt-4">
+                Getting help is <span className="text-gradient squiggle">easy.</span>
+              </h2>
+            </div>
+          </Reveal>
+          <div className="relative mt-16 grid md:grid-cols-3 gap-6">
+            {/* Connector line behind the cards */}
+            <div className="hidden md:block absolute top-[3.25rem] left-[16%] right-[16%] h-px bg-gradient-to-r from-transparent via-[#0071E3]/40 to-transparent" />
+            {steps.map((s, i) => (
+              <Reveal key={s.n} delay={i * 140}>
+                <div className="card-lift relative h-full rounded-3xl bg-white border border-black/5 shadow-[0_10px_40px_rgba(15,23,42,0.06)] p-8 text-center">
+                  <div className="relative mx-auto w-14 h-14 rounded-2xl grid place-items-center font-display text-2xl font-semibold text-white bg-gradient-to-br from-[#2b8cff] to-[#0062cc] shadow-[0_12px_30px_rgba(0,113,227,0.35)]">
+                    {s.n}
+                  </div>
+                  <h3 className="font-display font-semibold text-2xl mt-6">{s.title}</h3>
+                  <p className="text-gray-500 mt-3 leading-relaxed">{s.text}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============ SERVICES ACCORDION ============ */}
+      <ServicesAccordion />
 
       {/* ============ TESTIMONIALS ============ */}
       <section className="py-20 md:py-32 overflow-hidden bg-gradient-to-b from-white to-gray-50">
@@ -424,7 +453,7 @@ export default function Home() {
               Patient stories
             </p>
             <h2 className="font-display font-semibold text-[clamp(2rem,4.5vw,3.4rem)] mt-4">
-              Real words from <span className="text-gradient">real patients.</span>
+              Real words from <span className="text-gradient squiggle">real patients.</span>
             </h2>
           </div>
         </Reveal>

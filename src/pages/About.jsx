@@ -1,30 +1,8 @@
 import Reveal from "../components/Reveal.jsx";
+import Curve from "../components/Curve.jsx";
 import Icon from "../components/Icon.jsx";
 import { Seo, PageHero } from "../components/Page.jsx";
-import { PHONE, TEL } from "../data/site.js";
-
-const pillars = [
-  {
-    icon: "home",
-    title: "One place. Many ways to help.",
-    text: "Chiropractic care, massage, rehab, and more. You get the best of all worlds in each visit — no running between clinics.",
-  },
-  {
-    icon: "shield",
-    title: "You stay in control.",
-    text: "We explain what caused your problem in simple words. You make the choices. You always know why we do each step.",
-  },
-  {
-    icon: "heart",
-    title: "Care that comes home with you.",
-    text: "You get easy stretches and exercises to do at home. If you sit at a computer all day, Dr. Sukh shows you how to sit right.",
-  },
-  {
-    icon: "calendar",
-    title: "Easy to visit.",
-    text: "Open late on weekdays. Open Saturdays. Same-day visits are often possible. No doctor's referral needed.",
-  },
-];
+import CoreValues from "../components/CoreValues.jsx";
 
 export default function About() {
   return (
@@ -39,30 +17,37 @@ export default function About() {
         sub="Dr. Sukh is both a chiropractor and a registered massage therapist. That means your care covers muscles and joints — together."
       />
 
-      {/* Pillars */}
-      <section className="py-20 md:py-28">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-6">
-          {pillars.map((p, i) => (
-            <Reveal key={p.title} delay={i * 90}>
-              <div className="card-lift group relative overflow-hidden rounded-3xl bg-white p-8 md:p-10 h-full border border-black/5 shadow-[0_10px_40px_rgba(15,23,42,0.06)]">
-                <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-[#0071E3]/10 blur-2xl transition-transform duration-700 group-hover:scale-150" />
-                <span className="icon-badge relative">
-                  <Icon name={p.icon} className="w-6 h-6" />
-                </span>
-                <h2 className="relative font-display font-semibold text-2xl mt-6">{p.title}</h2>
-                <p className="relative text-gray-500 mt-3 leading-relaxed text-lg">{p.text}</p>
-              </div>
-            </Reveal>
-          ))}
+      {/* Mission + core values cycle */}
+      <section className="relative overflow-hidden py-20 md:py-28 bg-gradient-to-b from-white via-[#f5f8ff] to-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <Reveal>
+            <div className="text-center max-w-3xl mx-auto">
+              <p className="eyebrow eyebrow-light">
+                <span className="eyebrow-dot" />
+                Our mission
+              </p>
+              <h2 className="font-display font-semibold text-[clamp(2rem,4.5vw,3.4rem)] leading-tight mt-4">
+                Helping people<br className="hidden sm:block" />{" "}<span className="text-gradient">feel and live better.</span>
+              </h2>
+              <p className="mt-4 text-gray-500 text-lg">
+                Seven core values guide every visit. Tap a circle to read about each one.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal delay={150}>
+            <div className="mt-12 md:mt-16">
+              <CoreValues />
+            </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Inside the clinic */}
-      <section className="py-4 md:py-8">
+      <section className="pb-4 md:pb-8">
         <div className="max-w-6xl mx-auto px-6">
           <Reveal>
             <h2 className="font-display font-semibold text-[clamp(1.8rem,4vw,2.8rem)] text-center">
-              Take a look <span className="text-gradient">inside.</span>
+              Take a look <span className="text-gradient squiggle">inside.</span>
             </h2>
             <p className="text-center text-gray-500 text-lg mt-3 max-w-md mx-auto">
               A clean, calm space made for your comfort.
@@ -100,7 +85,8 @@ export default function About() {
       </section>
 
       {/* How care works here */}
-      <section className="relative overflow-hidden mt-20 md:mt-28 py-20 md:py-28 bg-[#0B0B0F] text-white">
+      <section className="relative overflow-hidden mt-20 md:mt-28 pt-24 pb-20 md:pt-40 md:pb-28 bg-[#0B0B0F] text-white">
+        <Curve position="top" fill="#fff" />
         <div className="aurora opacity-60" />
         <div className="relative max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center">
           <div>
@@ -125,7 +111,7 @@ export default function About() {
             </Reveal>
           </div>
           <Reveal delay={150}>
-            <div className="dark-card rounded-3xl p-8 md:p-10 backdrop-blur-md">
+            <div className="dark-card rounded-3xl p-8 md:p-10">
               <p className="eyebrow">
                 <span className="eyebrow-dot" />
                 Real stories
@@ -161,32 +147,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Talks CTA */}
-      <section className="py-20 md:py-28">
-        <div className="max-w-6xl mx-auto px-6">
-          <Reveal>
-            <div className="relative overflow-hidden rounded-[2.5rem] border border-black/5 bg-gradient-to-br from-[#eef5ff] via-white to-[#f3efff] p-10 md:p-16 text-center shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
-              <span className="icon-badge mx-auto mb-6">
-                <Icon name="users" className="w-6 h-6" />
-              </span>
-              <h2 className="font-display font-semibold text-[clamp(1.8rem,4vw,2.8rem)]">
-                Talks for offices and clubs.
-              </h2>
-              <p className="mt-4 text-gray-500 text-lg max-w-xl mx-auto leading-relaxed">
-                Dr. Sukh visits workplaces to teach healthy desk posture. He also speaks to running
-                groups at community centres. Want a talk for your team?
-              </p>
-              <a
-                href={TEL}
-                className="btn-primary mt-8 px-9 py-3.5"
-              >
-                <Icon name="phone" className="w-4 h-4" />
-                Call {PHONE}
-              </a>
-            </div>
-          </Reveal>
-        </div>
-      </section>
     </main>
   );
 }

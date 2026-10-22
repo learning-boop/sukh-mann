@@ -1,4 +1,5 @@
 import Reveal from "../components/Reveal.jsx";
+import Curve from "../components/Curve.jsx";
 import Icon from "../components/Icon.jsx";
 import { Seo, PageHero } from "../components/Page.jsx";
 import { PHONE, TEL, careDetails, faqs, conditions } from "../data/site.js";
@@ -12,12 +13,13 @@ export default function Care() {
       />
       <PageHero
         eyebrow="Our care"
+        curve={null}
         title="Many ways to help. One plan for you."
         sub="Dr. Sukh may use several of these in one visit — whatever your body needs."
       />
 
       {/* Conditions we treat */}
-      <section className="relative overflow-hidden py-16 md:py-24 bg-[#0B0B0F] text-white -mt-px">
+      <section className="relative overflow-hidden pt-16 pb-24 md:pt-24 md:pb-36 bg-[#0B0B0F] text-white -mt-px">
         <div className="grid-bg" />
         <div className="relative max-w-6xl mx-auto px-6">
           <Reveal>
@@ -42,6 +44,7 @@ export default function Care() {
             ))}
           </div>
         </div>
+        <Curve position="bottom" fill="#fff" />
       </section>
 
       {/* Services, alternating */}
@@ -51,11 +54,12 @@ export default function Care() {
           className={i % 2 === 0 ? "py-16 md:py-24" : "py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white"}
         >
           <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-12 gap-10 md:gap-14 items-center">
+            {s.img && (
             <Reveal className={`md:col-span-5 ${i % 2 === 1 ? "md:order-2" : ""}`}>
               <div className="group relative rounded-[2rem] overflow-hidden aspect-[4/3] bg-gray-100 shadow-[0_24px_60px_rgba(15,23,42,0.15)]">
                 <img
                   src={s.img}
-                  alt={s.title}
+                  alt={s.img.includes("/care/") ? `Dr. Sukh Mann providing ${s.title}` : s.title}
                   loading="lazy"
                   onError={(e) => (e.currentTarget.style.display = "none")}
                   className="w-full h-full object-cover group-hover:scale-[1.06] transition-transform duration-1000 ease-out"
@@ -66,7 +70,21 @@ export default function Care() {
                 </span>
               </div>
             </Reveal>
-            <div className={`md:col-span-7 ${i % 2 === 1 ? "md:order-1" : ""}`}>
+            )}
+            <div
+              className={
+                s.img
+                  ? `md:col-span-7 ${i % 2 === 1 ? "md:order-1" : ""}`
+                  : "md:col-span-12 max-w-3xl mx-auto w-full"
+              }
+            >
+              {!s.img && (
+                <Reveal>
+                  <span className="inline-block mb-4 font-display font-semibold text-sm text-[#0062cc] bg-[#0071E3]/8 border border-[#0071E3]/15 rounded-full px-3.5 py-1">
+                    {String(i + 1).padStart(2, "0")} / {String(careDetails.length).padStart(2, "0")}
+                  </span>
+                </Reveal>
+              )}
               <Reveal>
                 <h2 className="font-display font-semibold text-[clamp(1.8rem,3.5vw,2.6rem)] leading-snug">
                   {s.title}
@@ -105,12 +123,13 @@ export default function Care() {
       ))}
 
       {/* FAQ */}
-      <section className="relative overflow-hidden py-20 md:py-28 bg-[#0B0B0F] text-white">
+      <section className="relative overflow-hidden pt-24 pb-20 md:pt-40 md:pb-28 bg-[#0B0B0F] text-white">
+        <Curve position="top" fill="#fff" />
         <div className="aurora opacity-60" />
         <div className="relative max-w-3xl mx-auto px-6">
           <Reveal>
             <h2 className="font-display font-semibold text-[clamp(2rem,4.5vw,3.4rem)] text-center">
-              Good <span className="text-gradient">questions.</span>
+              Things people <span className="text-gradient squiggle">often ask.</span>
             </h2>
           </Reveal>
           <div className="mt-12 space-y-3">

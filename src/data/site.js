@@ -51,7 +51,6 @@ export const services = [
   { title: "Active Release (ART\u00ae)", line: "Hands-on care that finds tight spots and releases them." },
   { title: "Registered Massage", line: "Massage from a trained expert. Helps muscles relax and heal." },
   { title: "Active Rehab", line: "Simple exercises that make you strong again. Step by step." },
-  { title: "Physiotherapy", line: "Care that helps you move well after pain or injury." },
   { title: "Custom Orthotics", line: "Shoe inserts made just for your feet." },
   { title: "Laser Therapy", line: "A gentle light used on sore spots to help you feel better." },
 ];
@@ -62,14 +61,28 @@ export const EMAIL = "info@drsukhmann.com";
 export const careDetails = [
   {
     title: "Chiropractic Care",
-    img: "/images/services/chiro.jpg",
+    img: "/images/care/chiro-adjust.jpg",
     what: "When a joint sits out of place, the muscles around it get tight. Dr. Sukh uses gentle adjustments plus muscle work to fix both. This takes pressure off your nerves and helps you move more. Don't like the classic adjustment? No problem. He offers gentler ways, like the Activator\u00ae tool, Drop Table, and Graston. Your choice always comes first.",
     helps: ["Neck pain", "Mid-back pain", "Sciatica", "Pinched nerves"],
     quote: { text: "Definitely the best chiropractor that I have gone to in 40 years!", name: "Edith R." },
   },
   {
+    title: "Custom Orthotics",
+    img: "/images/services/orthotics.jpg",
+    what: "Your feet are your body's base. We take an impression of your foot and send it to a lab, where a 3D model is made. Your orthotics are then built to match your exact feet.",
+    helps: ["Foot pain", "Heel pain", "Weak arches"],
+    quote: { text: "My Plantar Fasciitis is completely gone and now I can get back to what I enjoy most\u2026 running!", name: "Ann H." },
+  },
+  {
+    title: "Movement Assessments",
+    img: "/images/care/movement.jpg",
+    what: "Dr. Sukh watches how you move through special test patterns (SFMA and FMS). If one area is not doing its job, he gives you exercises to make it strong and steady again.",
+    helps: ["Finding weak spots", "Better movement", "Injury prevention"],
+    quote: null,
+  },
+  {
     title: "Active Release Techniques\u00ae (ART)",
-    img: "/images/services/art.jpg",
+    img: "/images/care/art.jpg",
     what: "ART is a special, patented way to treat muscles, tendons, ligaments, nerves, and fascia. Old injuries can leave scar tissue that sticks things together. ART uses gentle tension to break these stuck spots free.",
     helps: ["Golfer's elbow", "Scar tissue", "Old injuries", "Overuse pain"],
     quote: { text: "Sukh has helped me with golfers elbow with the ART. I've had amazing results.", name: "Marie P." },
@@ -83,24 +96,10 @@ export const careDetails = [
   },
   {
     title: "Active Rehab",
-    img: "/images/services/rehab.jpg",
+    img: "/images/care/rehab.jpg",
     what: "Care does not stop when you leave. You get simple home stretches and exercises, picked for you, that speed up your progress and help keep the problem from coming back.",
     helps: ["After car accidents", "After injuries", "Getting back to sport"],
     quote: { text: "He follows up with exercises or other suggestions that you can do to keep healthy and active.", name: "Edith R." },
-  },
-  {
-    title: "Physiotherapy",
-    img: "/images/services/physio.jpg",
-    what: "Physiotherapy is part of the clinic's full-body approach. It helps your body move well again after pain or injury.",
-    helps: ["Stiffness", "Weakness", "Recovery after injury"],
-    quote: null,
-  },
-  {
-    title: "Custom Orthotics",
-    img: "/images/services/orthotics.jpg",
-    what: "Your feet are your body's base. We take an impression of your foot and send it to a lab, where a 3D model is made. Your orthotics are then built to match your exact feet.",
-    helps: ["Foot pain", "Heel pain", "Weak arches"],
-    quote: { text: "My Plantar Fasciitis is completely gone and now I can get back to what I enjoy most\u2026 running!", name: "Ann H." },
   },
   {
     title: "Class IV Laser Therapy",
@@ -108,13 +107,6 @@ export const careDetails = [
     what: "The LiteCure laser sends light deep into your body. It gives your cells more energy to repair sore spots, and it may bring down swelling. It does not hurt.",
     helps: ["Sprained ankles", "Arthritis", "Bursitis", "Plantar fasciitis"],
     quote: { text: "My knee wouldn't bend and I was on crutches on 3 days, had some laser and treatment that helped a bunch.", name: "Jovan M." },
-  },
-  {
-    title: "Movement Assessments",
-    img: "/images/services/movement.jpg",
-    what: "Dr. Sukh watches how you move through special test patterns (SFMA and FMS). If one area is not doing its job, he gives you exercises to make it strong and steady again.",
-    helps: ["Finding weak spots", "Better movement", "Injury prevention"],
-    quote: null,
   },
 ];
 
@@ -142,18 +134,18 @@ export const timeline = [
   { year: "Today", title: "Family first", text: "Off work, he loves family time, vacations, cycling, and playing hockey. He also coaches his kids' ice hockey team." },
 ];
 
-// Featured services for the home-page accordion (client-approved AI images in /public/images/services)
+// Featured services for the home-page accordion (real photos of Dr. Sukh in /public/images/care)
 export const featuredServices = [
   { title: "Chiropractic Care", line: "Gentle adjustments to help your spine and joints move right.",
-    img: "/images/services/chiro.jpg" },
-  { title: "Active Release (ART\u00ae)", line: "Hands-on care that finds tight spots and releases them.",
-    img: "/images/services/art.jpg" },
-  { title: "Registered Massage", line: "Massage from a trained expert. Helps muscles relax and heal.",
-    img: "/images/services/massage.jpg" },
+    img: "/images/care/chiro-adjust.jpg" },
+  { title: "Active Release (ART®)", line: "Hands-on care that finds tight spots and releases them.",
+    img: "/images/care/art.jpg" },
+  { title: "Sports Injury Care", line: "We find what is hurt, explain it simply, and get you back in the game.",
+    img: "/images/care/sports-injury.jpg" },
+  { title: "Movement Assessments", line: "We watch how you move to find weak spots before they cause pain.",
+    img: "/images/care/movement.jpg" },
   { title: "Active Rehab", line: "Simple exercises that make you strong again. Step by step.",
-    img: "/images/services/rehab.jpg" },
-  { title: "Physiotherapy", line: "Care that helps you move well after pain or injury.",
-    img: "/images/services/physio.jpg" },
+    img: "/images/care/rehab.jpg" },
 ];
 
 // Conditions treated — the clinic's own list from its Chiropractic Care page
@@ -164,4 +156,22 @@ export const conditions = [
   "Carpal tunnel", "TMJ (jaw) issues", "Tendinitis", "Repetitive use injuries",
   "Sports injuries", "Sprained ankles", "Knee arthritis", "Foot pain",
   "Postural strain", "Pre- & post-surgery care",
+];
+
+// Core values cycle on the About page (Performance Health Group values, in simple English)
+export const coreValues = [
+  { title: "Innovation", short: "Innovation", color: "#B00D2F",
+    text: "We keep looking for better ways to care for muscles, joints and bones. We stay up to date with new ideas in treatment, rehab, prevention and performance." },
+  { title: "Patient-Centred Care", short: "Patient", color: "#D9302A",
+    text: "You are the centre of everything we do. Your health comes first, and every step is aimed at the best result for you." },
+  { title: "Commitment to Excellence", short: "Excellence", color: "#EB8F2D",
+    text: "We aim for the highest standard of care. We use the best current research, expert skill, and keep learning every year." },
+  { title: "Integrity, Honesty, Respect", short: "Integrity", color: "#6FA83A",
+    text: "We treat every patient with honesty and respect. These values guide everything, from your care to how we run the clinic." },
+  { title: "Teamwork", short: "Teamwork", color: "#556B91",
+    text: "Great things are done by people working together. We trust and support each other, which brings new ideas and better results for you." },
+  { title: "Taking Ownership", short: "Ownership", color: "#A88E78",
+    text: "Every team member owns what they do and say. Taking full responsibility is where success starts." },
+  { title: "Education & Empowerment", short: "Education", color: "#4A4A4F",
+    text: "We teach you about your body, so you can take charge of your own health and do even better than you hoped." },
 ];
