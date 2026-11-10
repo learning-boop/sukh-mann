@@ -35,13 +35,14 @@ function PhotoHero() {
 
   return (
     <section className="relative min-h-[92svh] md:min-h-screen flex items-end overflow-hidden bg-[#0B0B0F] text-white">
-      <div ref={layer} className="absolute inset-0 md:left-[22%] will-change-transform">
+      <div ref={layer} className="absolute inset-x-0 top-0 h-[64svh] md:h-auto md:bottom-0 md:left-[22%] overflow-hidden will-change-transform">
         <img
-          src="/images/dr-sukh-clinic.jpg"
-          alt="Dr. Sukh Mann standing in his clinic"
+          src="/images/dr-sukh-hero.jpg"
+          alt="Dr. Sukh Mann smiling in his clinic"
           fetchpriority="high"
-          className="hero-photo absolute inset-0 w-full h-full object-cover object-[50%_15%] md:object-[50%_30%]"
+          className="hero-photo absolute inset-0 w-full h-full object-cover object-[25%_center] md:object-[0%_30%]"
         />
+        <div className="md:hidden absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#0B0B0F] to-transparent" />
       </div>
       {/* Readability overlays */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0F] via-[#0B0B0F]/40 to-transparent" />

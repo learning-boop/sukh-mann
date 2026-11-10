@@ -8,7 +8,7 @@ import { PHONE, TEL, painCards, steps, featuredServices, testimonials } from "..
 import heroImg from "../assets/hero-athlete.jpg";
 
 
-const teams = ["BC Lions", "Vancouver Whitecaps", "Rowing Canada", "SFU Hockey", "Olympic Games", "Paralympic Games", "Pan Am Games", "IRONMAN\u00ae", "World Police & Fire Games", "Vancouver Marathon"];
+const teams = ["BC Lions", "Vancouver Whitecaps", "Rowing Canada", "SFU Hockey", "Abbotsford Canucks", "Olympic Games", "Paralympic Games", "Pan Am Games", "IRONMAN\u00ae", "World Police & Fire Games", "Vancouver Marathon"];
 
 /* Scroll parallax: image drifts horizontally as the card moves through the viewport.
    direction: 1 = left-to-right, -1 = right-to-left. Disabled for reduced motion. */
@@ -96,6 +96,7 @@ function ServicesAccordion() {
                   alt={s.title}
                   loading="lazy"
                   onError={(e) => (e.currentTarget.style.display = "none")}
+                  style={{ objectPosition: s.pos || "center" }}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div

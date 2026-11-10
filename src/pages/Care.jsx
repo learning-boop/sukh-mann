@@ -62,6 +62,7 @@ export default function Care() {
                   alt={s.img.includes("/care/") ? `Dr. Sukh Mann providing ${s.title}` : s.title}
                   loading="lazy"
                   onError={(e) => (e.currentTarget.style.display = "none")}
+                  style={{ objectPosition: s.pos || "center" }}
                   className="w-full h-full object-cover group-hover:scale-[1.06] transition-transform duration-1000 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />

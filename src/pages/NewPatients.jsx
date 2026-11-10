@@ -40,7 +40,7 @@ const coverage = [
   {
     tag: "Work & private plans",
     title: "Extended health plans",
-    text: "Most plans cover chiropractic care and foot orthotics. Many pay back 80% or more. You pay at your visit, then send your receipt to your plan.",
+    text: "Most plans cover chiropractic care and foot orthotics. Please check your own plan to confirm coverage. We direct bill to make it easier for you.",
   },
   {
     tag: "Hurt at work",
@@ -97,8 +97,8 @@ export default function NewPatients() {
             <Reveal delay={200}>
               <p className="mt-14 text-gray-500 text-lg pl-10">
                 Plan for <span className="text-gray-900 font-medium">30 to 45 minutes</span> on your
-                first visit. After that, visits take about{" "}
-                <span className="text-gray-900 font-medium">20 to 30 minutes</span>.
+                first visit. Follow-up visits take{" "}
+                <span className="text-gray-900 font-medium">about 15 minutes</span>.
               </p>
             </Reveal>
           </div>
@@ -147,9 +147,9 @@ export default function NewPatients() {
               <span className="icon-badge mb-6"><Icon name="shield" className="w-6 h-6" /></span>
               <h2 className="font-display font-semibold text-2xl">You are in charge</h2>
               <p className="text-gray-500 mt-3 text-lg leading-relaxed">
-                Some think that once you start, you must go forever. Not true. Some people enjoy a
-                visit each month because it feels good — but how long you come is always your
-                choice.
+                Some think that once you start, you must go forever. Not true. Some people come in
+                as needed. Others like to come in regularly to keep their bodies moving. Whatever
+                works for you.
               </p>
             </div>
           </Reveal>

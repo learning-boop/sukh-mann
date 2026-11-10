@@ -61,7 +61,7 @@ export const EMAIL = "info@drsukhmann.com";
 export const careDetails = [
   {
     title: "Chiropractic Care",
-    img: "/images/care/chiro-adjust.jpg",
+    img: "/images/care/chiro-clinic.jpg",
     what: "When a joint sits out of place, the muscles around it get tight. Dr. Sukh uses gentle adjustments plus muscle work to fix both. This takes pressure off your nerves and helps you move more. Don't like the classic adjustment? No problem. He offers gentler ways, like the Activator\u00ae tool, Drop Table, and Graston. Your choice always comes first.",
     helps: ["Neck pain", "Mid-back pain", "Sciatica", "Pinched nerves"],
     quote: { text: "Definitely the best chiropractor that I have gone to in 40 years!", name: "Edith R." },
@@ -75,7 +75,8 @@ export const careDetails = [
   },
   {
     title: "Movement Assessments",
-    img: "/images/care/movement.jpg",
+    img: "/images/care/movement-clinic.jpg",
+    pos: "50% 47%",
     what: "Dr. Sukh watches how you move through special test patterns (SFMA and FMS). If one area is not doing its job, he gives you exercises to make it strong and steady again.",
     helps: ["Finding weak spots", "Better movement", "Injury prevention"],
     quote: null,
@@ -104,7 +105,7 @@ export const careDetails = [
   {
     title: "Class IV Laser Therapy",
     img: "/images/services/laser.jpg",
-    what: "The LiteCure laser sends light deep into your body. It gives your cells more energy to repair sore spots, and it may bring down swelling. It does not hurt.",
+    what: "The LiteCure laser uses light energy that goes deep into your tissues, and you will feel it as a gentle heat. It sends energy to your cells to repair sore spots, helps with swelling, and works at the root of the problem to help promote healing.",
     helps: ["Sprained ankles", "Arthritis", "Bursitis", "Plantar fasciitis"],
     quote: { text: "My knee wouldn't bend and I was on crutches on 3 days, had some laser and treatment that helped a bunch.", name: "Jovan M." },
   },
@@ -113,13 +114,13 @@ export const careDetails = [
 // Simple-English FAQs (paraphrased from the clinic's own answers)
 export const faqs = [
   { q: "What happens on my first visit?", a: "We talk about your health story. Dr. Sukh does a careful check to find the cause. He explains what he found. Then, after your OK, your first treatment can start the same day." },
-  { q: "How long does a visit take?", a: "Plan 30 to 45 minutes for your first visit. After that, most visits take about 20 to 30 minutes." },
+  { q: "How long does a visit take?", a: "For your first visit, expect to be here about 30 to 45 minutes. Follow-up visits take about 15 minutes." },
   { q: "Do I need a doctor's referral?", a: "No. You can book with us directly. No referral is needed." },
   { q: "Do I need X-rays first?", a: "Usually not. Dr. Sukh only asks for X-rays when they are really needed." },
   { q: "Can I come in today?", a: "Often, yes. Same-day visits are often possible. Just call us." },
   { q: "I was in a car accident. What do I pay?", a: "If ICBC covers you, you pay nothing. We do the paperwork for you." },
-  { q: "Do you take my insurance plan?", a: "Most extended health plans cover chiropractic care and orthotics. Many pay back 80% or more. We also work with WorkSafe BC, MSP, RCMP, and Veterans Affairs." },
-  { q: "If I start, do I have to come forever?", a: "No. That is a myth. Some people like a visit each month because it feels good. But it is always your choice how long you come." },
+  { q: "Does insurance cover my treatment?", a: "Most extended health plans cover chiropractic care and orthotics. Please check your own plan to confirm coverage. We can also bill WorkSafe BC, MSP, RCMP, and Veterans Affairs. We direct bill to make it easier for you." },
+  { q: "If I start, do I have to come forever?", a: "No, this is a myth. Some people come in as needed. Others like to come in regularly to keep their bodies moving. Whatever works for you." },
 ];
 
 // Dr. Sukh journey timeline (from his bio page)
@@ -129,7 +130,7 @@ export const timeline = [
   { year: "Portland", title: "Doctor of Chiropractic", text: "He studied chiropractic at the University of Western States in Portland, Oregon." },
   { year: "2007", title: "Opening his practice", text: "He has been in practice since 2007, mixing muscle care and joint care in every visit." },
   { year: "Always learning", title: "New skills every year", text: "He keeps taking courses, like Active Release Techniques\u00ae and Dynamic Neuromuscular Stabilization." },
-  { year: "Pro sports", title: "Team chiropractor", text: "He has worked with the CFL's BC Lions, the Vancouver Whitecaps, Rowing Canada, and the SFU hockey team." },
+  { year: "Pro sports", title: "Team chiropractor", text: "He has worked with the CFL's BC Lions, the Vancouver Whitecaps, Rowing Canada, the SFU hockey team, and the AHL's Abbotsford Canucks." },
   { year: "World stage", title: "Big events, near and far", text: "The Olympics, Paralympics, Pan Am Games, IRONMAN\u00ae, World Police and Fire Games, the Vancouver Marathon, and more. His work has taken him across Canada, Europe, and Mexico." },
   { year: "Today", title: "Family first", text: "Off work, he loves family time, vacations, cycling, and playing hockey. He also coaches his kids' ice hockey team." },
 ];
@@ -137,13 +138,13 @@ export const timeline = [
 // Featured services for the home-page accordion (real photos of Dr. Sukh in /public/images/care)
 export const featuredServices = [
   { title: "Chiropractic Care", line: "Gentle adjustments to help your spine and joints move right.",
-    img: "/images/care/chiro-adjust.jpg" },
+    img: "/images/care/chiro-clinic.jpg", pos: "45% 40%" },
   { title: "Active Release (ART®)", line: "Hands-on care that finds tight spots and releases them.",
     img: "/images/care/art.jpg" },
   { title: "Sports Injury Care", line: "We find what is hurt, explain it simply, and get you back in the game.",
     img: "/images/care/sports-injury.jpg" },
   { title: "Movement Assessments", line: "We watch how you move to find weak spots before they cause pain.",
-    img: "/images/care/movement.jpg" },
+    img: "/images/care/movement-clinic.jpg", pos: "50% 47%" },
   { title: "Active Rehab", line: "Simple exercises that make you strong again. Step by step.",
     img: "/images/care/rehab.jpg" },
 ];
