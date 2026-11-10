@@ -105,17 +105,17 @@ export default function NewPatients() {
 
           <Reveal delay={150} className="md:sticky md:top-28">
             <div className="relative">
-              <div className="relative rounded-3xl overflow-hidden aspect-[4/5] bg-gradient-to-br from-gray-100 to-gray-200 shadow-[0_24px_60px_rgba(0,0,0,0.12)]">
+              <div className="relative rounded-3xl overflow-hidden aspect-[3/2] bg-gradient-to-br from-gray-100 to-gray-200 shadow-[0_24px_60px_rgba(0,0,0,0.12)]">
                 <div className="absolute inset-0 flex items-center justify-center text-5xl">🤝</div>
                 <img
-                  src="/images/care/first-visit.jpg"
+                  src="/images/care/first-visit-clinic.jpg"
                   alt="Dr. Sukh Mann going over a patient's assessment notes with her"
                   loading="lazy"
                   onError={(e) => (e.currentTarget.style.display = "none")}
-                  className="relative w-full h-full object-cover object-[42%_center]"
+                  className="relative w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 left-6 flex items-center gap-4 bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_16px_40px_rgba(0,0,0,0.18)] border border-black/5 px-5 py-4">
+              <div className="relative -mt-4 ml-6 w-fit flex items-center gap-4 bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_16px_40px_rgba(0,0,0,0.18)] border border-black/5 px-5 py-4">
                 <span className="icon-badge">
                   <Icon name="clock" className="w-6 h-6" />
                 </span>

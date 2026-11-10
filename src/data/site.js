@@ -83,7 +83,8 @@ export const careDetails = [
   },
   {
     title: "Active Release Techniques\u00ae (ART)",
-    img: "/images/care/art.jpg",
+    img: "/images/care/art-clinic.jpg",
+    pos: "50% 20%",
     what: "ART is a special, patented way to treat muscles, tendons, ligaments, nerves, and fascia. Old injuries can leave scar tissue that sticks things together. ART uses gentle tension to break these stuck spots free.",
     helps: ["Golfer's elbow", "Scar tissue", "Old injuries", "Overuse pain"],
     quote: { text: "Sukh has helped me with golfers elbow with the ART. I've had amazing results.", name: "Marie P." },
@@ -97,7 +98,7 @@ export const careDetails = [
   },
   {
     title: "Active Rehab",
-    img: "/images/care/rehab.jpg",
+    img: "/images/care/rehab-stepup.jpg",
     what: "Care does not stop when you leave. You get simple home stretches and exercises, picked for you, that speed up your progress and help keep the problem from coming back.",
     helps: ["After car accidents", "After injuries", "Getting back to sport"],
     quote: { text: "He follows up with exercises or other suggestions that you can do to keep healthy and active.", name: "Edith R." },
@@ -140,13 +141,13 @@ export const featuredServices = [
   { title: "Chiropractic Care", line: "Gentle adjustments to help your spine and joints move right.",
     img: "/images/care/chiro-clinic.jpg", pos: "45% 40%" },
   { title: "Active Release (ART®)", line: "Hands-on care that finds tight spots and releases them.",
-    img: "/images/care/art.jpg" },
+    img: "/images/care/art-clinic.jpg", pos: "50% 20%" },
   { title: "Sports Injury Care", line: "We find what is hurt, explain it simply, and get you back in the game.",
     img: "/images/care/sports-injury.jpg" },
   { title: "Movement Assessments", line: "We watch how you move to find weak spots before they cause pain.",
     img: "/images/care/movement-clinic.jpg", pos: "50% 47%" },
   { title: "Active Rehab", line: "Simple exercises that make you strong again. Step by step.",
-    img: "/images/care/rehab.jpg" },
+    img: "/images/care/rehab-stepup.jpg" },
 ];
 
 // Conditions treated — the clinic's own list from its Chiropractic Care page
