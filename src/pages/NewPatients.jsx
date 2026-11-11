@@ -2,7 +2,7 @@ import Reveal from "../components/Reveal.jsx";
 import Curve from "../components/Curve.jsx";
 import Icon from "../components/Icon.jsx";
 import { Seo, PageHero } from "../components/Page.jsx";
-import { PHONE, TEL } from "../data/site.js";
+import { PHONE, TEL, BOOK_URL } from "../data/site.js";
 
 const visitSteps = [
   {
@@ -228,15 +228,16 @@ export default function NewPatients() {
             ))}
           </div>
           <Reveal delay={200}>
-            <p className="text-center mt-12">
-              <a
-                href={TEL}
-                className="btn-light px-9 py-3.5"
-              >
-                <Icon name="phone" className="w-4 h-4" />
-                Book your first visit — {PHONE}
+            <div className="mt-12 flex flex-col sm:flex-row gap-3 justify-center">
+              <a href={BOOK_URL} target="_blank" rel="noopener noreferrer" className="btn-light px-9 py-3.5">
+                <Icon name="calendar" className="w-4 h-4" />
+                Book your first visit
               </a>
-            </p>
+              <a href={TEL} className="btn-ghost px-9 py-3.5">
+                <Icon name="phone" className="w-4 h-4" />
+                or call {PHONE}
+              </a>
+            </div>
           </Reveal>
         </div>
       </section>

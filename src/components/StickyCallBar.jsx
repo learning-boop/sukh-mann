@@ -1,18 +1,25 @@
-import { PHONE, TEL } from "../data/site.js";
+import { PHONE, TEL, BOOK_URL } from "../data/site.js";
 import Icon from "./Icon.jsx";
 
-/* Mobile-only floating call button */
+/* Mobile-only floating bar: book online (main action) or call */
 export default function StickyCallBar() {
   return (
-    <div className="md:hidden fixed bottom-4 inset-x-4 z-50">
+    <div className="md:hidden fixed bottom-4 inset-x-4 z-50 grid grid-cols-[1fr_auto] gap-2">
+      <a
+        href={BOOK_URL}
+        target="_blank" rel="noopener noreferrer"
+        className="btn-primary call-pulse py-4 text-base shadow-[0_16px_40px_rgba(0,113,227,0.45)]"
+      >
+        <Icon name="calendar" className="w-4 h-4" />
+        Book online
+      </a>
       <a
         href={TEL}
-        className="btn-primary call-pulse w-full py-4 text-base shadow-[0_16px_40px_rgba(0,113,227,0.45)]"
+        aria-label={`Call ${PHONE}`}
+        className="btn-light px-5 py-4 text-base border border-black/5 shadow-[0_16px_40px_rgba(0,0,0,0.25)]"
       >
-        <span className="grid place-items-center w-8 h-8 rounded-full bg-white/20">
-          <Icon name="phone" className="w-4 h-4" />
-        </span>
-        Call {PHONE}
+        <Icon name="phone" className="w-4 h-4" />
+        Call
       </a>
     </div>
   );

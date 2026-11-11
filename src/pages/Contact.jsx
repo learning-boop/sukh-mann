@@ -2,7 +2,7 @@ import { useState } from "react";
 import Reveal from "../components/Reveal.jsx";
 import Icon from "../components/Icon.jsx";
 import { Seo, PageHero } from "../components/Page.jsx";
-import { PHONE, TEL, EMAIL, MAPS_URL, hours } from "../data/site.js";
+import { PHONE, TEL, BOOK_URL, EMAIL, MAPS_URL, hours } from "../data/site.js";
 
 const MAP_EMBED =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2607.675286466154!2d-122.80139118431399!3d49.187747979321095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf9abaa8207022998!2sDr+Sukh+Mann!5e0!3m2!1sen!2sus!4v1551127120084";
@@ -28,7 +28,7 @@ export default function Contact() {
       <PageHero
         eyebrow="Contact"
         title="Talk to a real person."
-        sub="The fastest way to book is a phone call. Same-day visits are often possible."
+        sub="Book online in a minute, or give us a call. Same-day visits are often possible."
       />
 
       {/* Big call CTA */}
@@ -44,6 +44,16 @@ export default function Contact() {
           >
             {PHONE}
           </a>
+          <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+            <a href={BOOK_URL} target="_blank" rel="noopener noreferrer" className="btn-primary px-9 py-4 text-base">
+              <Icon name="calendar" className="w-4 h-4" />
+              Book online with Jane
+            </a>
+            <a href={TEL} className="btn-light border border-black/10 px-9 py-4 text-base">
+              <Icon name="phone" className="w-4 h-4" />
+              Call now
+            </a>
+          </div>
         </Reveal>
       </section>
 

@@ -4,7 +4,7 @@ import Reveal from "../components/Reveal.jsx";
 import Curve from "../components/Curve.jsx";
 import PortraitCard from "../components/PortraitCard.jsx";
 import Icon from "../components/Icon.jsx";
-import { PHONE, TEL, painCards, steps, featuredServices, testimonials } from "../data/site.js";
+import { PHONE, TEL, BOOK_URL, painCards, steps, featuredServices, testimonials } from "../data/site.js";
 import heroImg from "../assets/hero-athlete.jpg";
 
 
@@ -221,7 +221,7 @@ export default function Home() {
             </Reveal>
             <Reveal delay={340}>
               <div className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-                <a href={TEL} className="btn-light w-full sm:w-auto pl-8 pr-6 py-4 text-base">
+                <a href={BOOK_URL} target="_blank" rel="noopener noreferrer" className="btn-light w-full sm:w-auto pl-8 pr-6 py-4 text-base">
                   Book your visit
                   <Icon name="arrow" className="btn-arrow w-4 h-4" />
                 </a>

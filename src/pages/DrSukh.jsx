@@ -4,7 +4,7 @@ import Curve from "../components/Curve.jsx";
 import Icon from "../components/Icon.jsx";
 import PortraitCard from "../components/PortraitCard.jsx";
 import { Seo } from "../components/Page.jsx";
-import { PHONE, TEL, timeline } from "../data/site.js";
+import { PHONE, TEL, BOOK_URL, timeline } from "../data/site.js";
 
 const stats = [
   { n: "2007", label: "In practice since" },
@@ -68,18 +68,28 @@ function PhotoHero() {
         <Reveal delay={360}>
           <div className="mt-9 flex flex-col sm:flex-row gap-3">
             <a
-              href={TEL}
+              href={BOOK_URL}
+              target="_blank" rel="noopener noreferrer"
               className="btn-primary w-full sm:w-auto px-8 py-3.5"
+            >
+              <Icon name="calendar" className="w-4 h-4" />
+              Book online
+            </a>
+            <a
+              href={TEL}
+              className="btn-ghost w-full sm:w-auto px-8 py-3.5"
             >
               <Icon name="phone" className="w-4 h-4" />
               Call {PHONE}
             </a>
-            <a
-              href="#story"
-              className="btn-ghost w-full sm:w-auto px-8 py-3.5"
-            >
-              His story ↓
-            </a>
+            <div className="hidden lg:block">
+              <a
+                href="#story"
+                className="btn-ghost px-8 py-3.5"
+              >
+                His story ↓
+              </a>
+            </div>
           </div>
         </Reveal>
         <Reveal delay={480}>
@@ -197,15 +207,18 @@ export default function DrSukh() {
               Ready to meet Dr. Sukh?
             </h2>
             <p className="relative mt-4 text-lg text-blue-100 max-w-md mx-auto">
-              Call today. Same-day visits are often possible.
+              Book online or call today. Same-day visits are often possible.
             </p>
-            <a
-              href={TEL}
-              className="btn-light relative mt-8 px-9 py-3.5"
-            >
-              <Icon name="phone" className="w-4 h-4" />
-              Call {PHONE}
-            </a>
+            <div className="relative mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+              <a href={BOOK_URL} target="_blank" rel="noopener noreferrer" className="btn-light px-9 py-3.5">
+                <Icon name="calendar" className="w-4 h-4" />
+                Book online
+              </a>
+              <a href={TEL} className="btn-ghost px-9 py-3.5">
+                <Icon name="phone" className="w-4 h-4" />
+                Call {PHONE}
+              </a>
+            </div>
           </div>
         </Reveal>
       </section>

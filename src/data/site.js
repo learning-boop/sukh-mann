@@ -1,5 +1,7 @@
 export const PHONE = "(604) 581-0232";
 export const TEL = "tel:6045810232";
+// Online booking for Dr. Sukh (Jane App, Performance Health Group Surrey)
+export const BOOK_URL = "https://phgsurrey.janeapp.com/#/staff_member/16";
 export const MAPS_URL = "https://maps.google.com/?cid=11867297383599268434";
 
 // Bento grid cards (client-approved AI images in /public/images/conditions)
@@ -118,7 +120,7 @@ export const faqs = [
   { q: "How long does a visit take?", a: "For your first visit, expect to be here about 30 to 45 minutes. Follow-up visits take about 15 minutes." },
   { q: "Do I need a doctor's referral?", a: "No. You can book with us directly. No referral is needed." },
   { q: "Do I need X-rays first?", a: "Usually not. Dr. Sukh only asks for X-rays when they are really needed." },
-  { q: "Can I come in today?", a: "Often, yes. Same-day visits are often possible. Just call us." },
+  { q: "Can I come in today?", a: "Often, yes. Same-day visits are often possible. Book online or just call us." },
   { q: "I was in a car accident. What do I pay?", a: "If ICBC covers you, you pay nothing. We do the paperwork for you." },
   { q: "Does insurance cover my treatment?", a: "Most extended health plans cover chiropractic care and orthotics. Please check your own plan to confirm coverage. We can also bill WorkSafe BC, MSP, RCMP, and Veterans Affairs. We direct bill to make it easier for you." },
   { q: "If I start, do I have to come forever?", a: "No, this is a myth. Some people come in as needed. Others like to come in regularly to keep their bodies moving. Whatever works for you." },

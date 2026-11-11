@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import Curve from "./Curve.jsx";
 import Icon from "./Icon.jsx";
-import { PHONE, TEL, EMAIL, MAPS_URL, hours } from "../data/site.js";
+import { PHONE, TEL, BOOK_URL, EMAIL, MAPS_URL, hours } from "../data/site.js";
 
 // Colour of the last section on each page, where it is light (dark endings get a plain divider)
 const LIGHT_ENDING = { "/": "#f9fafb", "/contact": "#fff", "/dr-sukh-mann": "#fff" };
@@ -103,6 +103,12 @@ export default function Footer() {
                     Get directions →
                   </a>
                 </span>
+              </li>
+              <li>
+                <a href={BOOK_URL} target="_blank" rel="noopener noreferrer" className="flex gap-3 text-white font-medium hover:text-[#6EB4FF] transition-colors">
+                  <Icon name="calendar" className="w-5 h-5 text-[#6EB4FF] shrink-0" />
+                  Book online
+                </a>
               </li>
               <li>
                 <a href={TEL} className="flex gap-3 hover:text-white transition-colors">

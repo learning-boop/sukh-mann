@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { PHONE, TEL } from "../data/site.js";
+import { PHONE, TEL, BOOK_URL } from "../data/site.js";
 import Icon from "./Icon.jsx";
 
 const links = [
@@ -89,9 +89,13 @@ export default function Navbar() {
               {l.label}
             </NavLink>
           ))}
-          <a href={TEL} className="btn-primary ml-3 text-[13px] px-5 py-2">
+          <a href={TEL} className="btn-ghost ml-3 text-[13px] px-4 py-2" aria-label={`Call ${PHONE}`}>
             <Icon name="phone" className="w-3.5 h-3.5" />
-            Call Now
+            Call
+          </a>
+          <a href={BOOK_URL} target="_blank" rel="noopener noreferrer" className="btn-primary ml-2 text-[13px] px-5 py-2">
+            <Icon name="calendar" className="w-3.5 h-3.5" />
+            Book Online
           </a>
         </div>
 
@@ -122,7 +126,11 @@ export default function Navbar() {
               <Icon name="arrow" className="w-4 h-4 text-gray-500" />
             </NavLink>
           ))}
-          <a href={TEL} className="btn-primary w-full mt-5 py-3.5 text-base">
+          <a href={BOOK_URL} target="_blank" rel="noopener noreferrer" className="btn-primary w-full mt-5 py-3.5 text-base">
+            <Icon name="calendar" className="w-4 h-4" />
+            Book online
+          </a>
+          <a href={TEL} className="btn-ghost w-full mt-3 py-3.5 text-base">
             <Icon name="phone" className="w-4 h-4" />
             Call {PHONE}
           </a>
