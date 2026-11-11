@@ -21,10 +21,7 @@ export default function Contact() {
 
   return (
     <main>
-      <Seo
-        title="Contact | Chiropractor in Surrey BC | Dr. Sukh Mann (604) 581-0232"
-        description="Call (604) 581-0232 or visit Dr. Sukh Mann at 202-10190 152A Street, Surrey BC. Open late weekdays and Saturdays."
-      />
+      <Seo page="/contact" />
       <PageHero
         eyebrow="Contact"
         title="Talk to a real person."

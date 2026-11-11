@@ -1,17 +1,27 @@
 import { useEffect } from "react";
 import Reveal from "./Reveal.jsx";
 import Curve from "./Curve.jsx";
+import { seo } from "../data/seo.js";
 
-export function Seo({ title, description }) {
+function setMeta(attr, key, content) {
+  let m = document.querySelector(`meta[${attr}="${key}"]`);
+  if (!m) {
+    m = document.createElement("meta");
+    m.setAttribute(attr, key);
+    document.head.appendChild(m);
+  }
+  m.setAttribute("content", content);
+}
+
+/* Keeps the tab title and search/social descriptions in step with the page.
+   The same values are written into the pre-rendered HTML at build time. */
+export function Seo({ page }) {
+  const { title, description } = seo[page];
   useEffect(() => {
     document.title = title;
-    let m = document.querySelector('meta[name="description"]');
-    if (!m) {
-      m = document.createElement("meta");
-      m.setAttribute("name", "description");
-      document.head.appendChild(m);
-    }
-    m.setAttribute("content", description);
+    setMeta("name", "description", description);
+    setMeta("property", "og:title", title);
+    setMeta("property", "og:description", description);
   }, [title, description]);
   return null;
 }

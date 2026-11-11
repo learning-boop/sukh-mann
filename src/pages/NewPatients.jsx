@@ -67,10 +67,7 @@ const coverage = [
 export default function NewPatients() {
   return (
     <main>
-      <Seo
-        title="New Patients | ICBC Chiropractor Surrey BC | Dr. Sukh Mann"
-        description="Your first visit takes 30-45 minutes. No referral needed. ICBC, WorkSafe BC, MSP, RCMP, DVA and extended health plans accepted in Surrey BC."
-      />
+      <Seo page="/new-patients" />
       <PageHero
         eyebrow="New patients"
         title="Your first visit, step by step."

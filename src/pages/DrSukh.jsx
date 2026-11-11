@@ -114,10 +114,7 @@ function PhotoHero() {
 export default function DrSukh() {
   return (
     <main>
-      <Seo
-        title="Dr. Sukh Mann BSc, RMT, DC | Sports Injury Chiropractor Surrey"
-        description="Dr. Sukh Mann is a chiropractor and registered massage therapist who has worked with the BC Lions, Rowing Canada, and at the Olympic Games."
-      />
+      <Seo page="/dr-sukh-mann" />
       <PhotoHero />
 
       {/* Photo + intro */}

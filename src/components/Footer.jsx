@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Curve from "./Curve.jsx";
 import Icon from "./Icon.jsx";
@@ -17,7 +18,9 @@ const pages = [
 ];
 
 export default function Footer() {
-  const today = DAYS[new Date().getDay()];
+  // Set after load so the pre-rendered HTML does not freeze the build day as "today"
+  const [today, setToday] = useState(null);
+  useEffect(() => setToday(DAYS[new Date().getDay()]), []);
   const above = LIGHT_ENDING[useLocation().pathname];
 
   return (

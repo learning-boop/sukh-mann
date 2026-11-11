@@ -7,10 +7,7 @@ import { PHONE, TEL, careDetails, faqs, conditions } from "../data/site.js";
 export default function Care() {
   return (
     <main>
-      <Seo
-        title="Chiropractic Care Surrey | Back Pain, Sciatica & Sports Injury Treatment"
-        description="Back pain treatment, sciatica care, whiplash and sports injury chiropractic in Surrey BC. Active Release Techniques®, massage, orthotics, Class IV laser and more."
-      />
+      <Seo page="/care" />
       <PageHero
         eyebrow="Our care"
         curve={null}

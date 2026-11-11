@@ -4,6 +4,7 @@ import Reveal from "../components/Reveal.jsx";
 import Curve from "../components/Curve.jsx";
 import PortraitCard from "../components/PortraitCard.jsx";
 import Icon from "../components/Icon.jsx";
+import { Seo } from "../components/Page.jsx";
 import { PHONE, TEL, BOOK_URL, painCards, steps, featuredServices, testimonials } from "../data/site.js";
 import heroImg from "../assets/hero-athlete.jpg";
 
@@ -169,6 +170,7 @@ function ServicesAccordion() {
 export default function Home() {
   return (
     <main>
+      <Seo page="/" />
       {/* ============ HERO ============ */}
       <section className="relative bg-[#0B0B0F] text-white overflow-hidden md:min-h-[100svh] md:flex md:items-center">
         {/* Desktop: full photo anchored right */}

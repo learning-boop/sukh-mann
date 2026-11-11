@@ -7,10 +7,7 @@ import CoreValues from "../components/CoreValues.jsx";
 export default function About() {
   return (
     <main>
-      <Seo
-        title="About Us | Dr. Sukh Mann, Chiropractor in Surrey BC"
-        description="Since 2007, Dr. Sukh Mann has combined chiropractic care and massage therapy in one Surrey clinic. Free parking, open late and Saturdays."
-      />
+      <Seo page="/about" />
       <PageHero
         eyebrow="About us"
         title="Helping Surrey feel better since 2007."
