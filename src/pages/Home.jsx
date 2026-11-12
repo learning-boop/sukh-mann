@@ -5,7 +5,7 @@ import Curve from "../components/Curve.jsx";
 import PortraitCard from "../components/PortraitCard.jsx";
 import Icon from "../components/Icon.jsx";
 import { Seo } from "../components/Page.jsx";
-import { PHONE, TEL, BOOK_URL, painCards, steps, featuredServices, testimonials } from "../data/site.js";
+import { PHONE, TEL, BOOK_URL, MAPS_URL, painCards, steps, featuredServices, testimonials } from "../data/site.js";
 import heroImg from "../assets/hero-athlete.jpg";
 
 
@@ -243,6 +243,24 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
+            </Reveal>
+            <Reveal delay={560}>
+              {/* Where and when, near the top (full hours are in the footer) */}
+              <div className="mt-6 flex flex-col sm:flex-row sm:flex-wrap gap-x-6 gap-y-2 items-center md:items-start justify-center md:justify-start text-sm text-gray-400">
+                <a
+                  href={MAPS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 hover:text-white transition-colors"
+                >
+                  <Icon name="pin" className="w-4 h-4 text-[#6EB4FF] shrink-0" />
+                  202 – 10190 152A Street, Surrey, BC
+                </a>
+                <span className="inline-flex items-center gap-2">
+                  <Icon name="clock" className="w-4 h-4 text-[#6EB4FF] shrink-0" />
+                  Open Mon–Sat · until 7 pm Tue &amp; Thu
+                </span>
+              </div>
             </Reveal>
           </div>
         </div>

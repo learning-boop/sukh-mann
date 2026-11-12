@@ -9,7 +9,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const dist = join(root, "dist");
 const ssrDir = join(root, "dist-ssr");
 
-const { render, seo, routes } = await import(pathToFileURL(join(ssrDir, "entry-server.js")).href);
+const { render, seo, routes, SITE_URL, OG_IMAGE } = await import(pathToFileURL(join(ssrDir, "entry-server.js")).href);
 const template = readFileSync(join(dist, "index.html"), "utf-8");
 
 const esc = (s) =>
@@ -24,7 +24,21 @@ for (const url of routes) {
     `    <meta property="og:type" content="website" />\n` +
     `    <meta property="og:site_name" content="Dr. Sukh Mann, Chiropractor" />\n` +
     `    <meta property="og:title" content="${esc(title)}" />\n` +
-    `    <meta property="og:description" content="${esc(description)}" />`;
+    `    <meta property="og:description" content="${esc(description)}" />
+` +
+    `    <meta property="og:url" content="${SITE_URL}${url}" />
+` +
+    `    <meta property="og:image" content="${SITE_URL}${OG_IMAGE}" />
+` +
+    `    <meta property="og:image:width" content="1200" />
+` +
+    `    <meta property="og:image:height" content="630" />
+` +
+    `    <meta property="og:image:alt" content="Dr. Sukh Mann smiling in his Surrey clinic" />
+` +
+    `    <meta name="twitter:card" content="summary_large_image" />
+` +
+    `    <link rel="canonical" href="${SITE_URL}${url}" />`;
 
   const html = template
     .replace(/<title>[\s\S]*?<\/title>\s*<meta\s+name="description"[\s\S]*?\/>/, head)

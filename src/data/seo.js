@@ -1,6 +1,11 @@
 // Page titles and search descriptions, used by each page (<Seo />) and by the
 // pre-render step that writes them into the static HTML.
 // Keep titles under ~60 characters and descriptions under ~155 so search results don't cut them off.
+// Public address of the site. Change this if the clinic moves to its own domain.
+export const SITE_URL = "https://sukh-mann.vercel.app";
+// 1200x630 picture shown when a page link is shared (WhatsApp, Facebook, LinkedIn, X)
+export const OG_IMAGE = "/og-image.jpg";
+
 export const seo = {
   "/": {
     title: "Dr. Sukh Mann | Surrey Chiropractor for Back & Neck Pain",
